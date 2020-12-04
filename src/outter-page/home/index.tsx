@@ -16,6 +16,7 @@ const { Content, Footer, Sider } = Layout;
  * 配置导航栏链接和文字
  */
 const MENU_DATA = [
+  new MenuItem('/', '首页'),
   new MenuItemGroup('user-list', [
     {
       url: '/userList',
