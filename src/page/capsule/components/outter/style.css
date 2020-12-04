@@ -1,0 +1,15 @@
+.outter-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+
+.col12 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.item-box {
+  box-shadow: 0 0 5px #aaa;
+}
