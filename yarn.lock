@@ -1747,6 +1747,11 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.npm.taobao.org/@types/sizzle/download/@types/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha1-qBG4wY4rq6t9VCszZYh64uTZ3kc=
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -3162,6 +3167,11 @@ classnames@2.x, classnames@^2.2.1, classnames@^2.2.3, classnames@^2.2.5, classna
   resolved "https://registry.npm.taobao.org/classnames/download/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha1-Q5Nb/90pHzJtrQogUwmzjQD2UM4=
 
+claygl@^1.2.1:
+  version "1.3.0"
+  resolved "https://registry.npm.taobao.org/claygl/download/claygl-1.3.0.tgz#7a6e2903210519ac358848f5d78070ed211685f3"
+  integrity sha1-em4pAyEFGaw1iEj114Bw7SEWhfM=
+
 clean-css@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
@@ -4257,6 +4267,14 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
+
+echarts-gl@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/echarts-gl/download/echarts-gl-1.1.1.tgz?cache=0&sync_timestamp=1605083239109&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fecharts-gl%2Fdownload%2Fecharts-gl-1.1.1.tgz#3df321cd4df7fee774e9a09e4dd29c9fd7e9104f"
+  integrity sha1-PfMhzU33/ud06aCeTdKcn9fpEE8=
+  dependencies:
+    claygl "^1.2.1"
+    zrender "^4.0.4"
 
 echarts@^5.0.0:
   version "5.0.0"
@@ -12048,3 +12066,8 @@ zrender@5.0.1:
   integrity sha1-zDdxNqnQDQoXfKf2XDKu0pAZKNo=
   dependencies:
     tslib "1.10.0"
+
+zrender@^4.0.4:
+  version "4.3.2"
+  resolved "https://registry.npm.taobao.org/zrender/download/zrender-4.3.2.tgz?cache=0&sync_timestamp=1605885988121&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fzrender%2Fdownload%2Fzrender-4.3.2.tgz#ec7432f9415c82c73584b6b7b8c47e1b016209c6"
+  integrity sha1-7HQy+UFcgsc1hLa3uMR+GwFiCcY=
