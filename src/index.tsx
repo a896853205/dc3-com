@@ -7,10 +7,14 @@ import { renderRoutes } from 'react-router-config';
 import { UseRequestProvider } from 'ahooks';
 import axios from 'axios';
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
 import { requestLog, responseLog } from './util/axios-interceptors';
 import * as APIS from './constants/api-constants';
 import { ErrorBoundary } from './components/Error-boundary/Error-boundary';
 import './index.css';
+import reducer from './redux/reducers';
 import routes from './route';
 import * as serviceWorker from './serviceWorker';
 
@@ -36,13 +40,17 @@ axios.interceptors.response.use(
   }
 );
 
+const store = createStore(reducer);
+
 ReactDOM.render(
   <ErrorBoundary errorUrl={APIS.ERROR_LOG} nodeEnv={process.env.NODE_ENV}>
     <UseRequestProvider
       value={{
         requestMethod: param => axios(param),
       }}>
-      <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+      </Provider>
     </UseRequestProvider>
   </ErrorBoundary>,
   document.getElementById('root')

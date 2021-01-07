@@ -8,7 +8,7 @@ export default () => {
   return (
     <>
       <Search />
-      <Increase></Increase>
+      <Increase />
       <Show />
     </>
   );
