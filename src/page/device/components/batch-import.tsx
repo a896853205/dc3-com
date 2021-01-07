@@ -1,26 +1,37 @@
-import React from 'react';
+import React, { useCallback } from "react";
 
-import { Button, Modal, Upload } from 'antd';
-import { useBoolean } from 'ahooks';
-import { InboxOutlined } from '@ant-design/icons';
+import { Button, Modal, Upload } from "antd";
+import { useBoolean } from "ahooks";
+import { useDispatch } from "react-redux";
+import { InboxOutlined } from "@ant-design/icons";
+
+import { batchImportDevice } from "../actions";
 
 const { Dragger } = Upload;
 
 export default () => {
   const [isShow, { setTrue, setFalse }] = useBoolean(false);
+  const dispatch = useDispatch();
+
+  const onFinish = useCallback(() => {
+    // TODO:向后台批量添加数据
+    dispatch(batchImportDevice());
+    setFalse();
+  }, [dispatch, setFalse]);
 
   return (
     <>
-      <Button onClick={setTrue} type='primary'>
+      <Button onClick={setTrue} type="primary">
         批量导入
       </Button>
       <Modal
-        title='批量导入'
+        title="批量导入"
         visible={isShow}
-        onOk={setFalse}
+        onOk={onFinish}
         onCancel={setFalse}
-        cancelText='取消'
-        okText='确定'>
+        cancelText="取消"
+        okText="确定"
+      >
         <Dragger multiple>
           <p>
             <InboxOutlined />

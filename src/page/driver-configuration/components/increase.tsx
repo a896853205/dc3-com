@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useCallback } from "react";
 
-import { Button, Modal, Form, Input, Select, DatePicker } from 'antd';
-import { useBoolean } from 'ahooks';
+import { Button, Modal, Form, Input, Select, DatePicker } from "antd";
+import { useBoolean } from "ahooks";
+import { useDispatch } from "react-redux";
+
+import { addDriverConfig } from "../actions";
 
 const { Option } = Select;
 
 export default () => {
   const [isShow, { setTrue, setFalse }] = useBoolean(false);
+  const dispatch = useDispatch();
+
+  const onFinish = useCallback(() => {
+    // TODO: HTTP请求后台增加
+
+    dispatch(addDriverConfig());
+    setFalse();
+  }, [dispatch, setFalse]);
 
   return (
     <>
@@ -16,7 +27,7 @@ export default () => {
       <Modal
         title="新增模板"
         visible={isShow}
-        onOk={setFalse}
+        onOk={onFinish}
         onCancel={setFalse}
         cancelText="取消"
         okText="确定"

@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect } from "react";
 
-import { Table } from 'antd';
-import Column from 'antd/lib/table/Column';
+import { Table } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+
+import { showDevice } from "../actions";
+import Column from "antd/lib/table/Column";
 
 export default () => {
+  let refresh = useSelector((state: Device.ReduxState) => state.device.refresh);
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(refresh);
+
+    if (refresh) {
+      // TODO: HTTP请求device数据
+      dispatch(showDevice());
+    }
+  }, [refresh, dispatch]);
+
   return (
-    <Table>
+    <Table dataSource={[]}>
       <Column title="#" dataIndex="index" key="index"></Column>
       <Column title="设备" dataIndex="device" key="devce"></Column>
       <Column title="所属模板" dataIndex="template" key="template"></Column>

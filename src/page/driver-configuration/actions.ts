@@ -1,13 +1,17 @@
-import { createActions } from 'redux-actions';
+import { createActions } from "redux-actions";
 
 export const actionTypes = {
-  ADD_DRIVERCONFIG: 'ADD_DRIVERCONFIG',
-  SHOW_DRIVERCONFIG: 'SHOW_DRIVERCONFIG',
-  SEARCH_DRIVERCONFIG: 'SEARCH_DRIVERCONFIG',
+  ADD_DRIVER_CONFIG: "ADD_DRIVER_CONFIG",
+  SHOW_DRIVER_CONFIG: "SHOW_DRIVER_CONFIG",
+  SEARCH_DRIVER_CONFIG: "SEARCH_DRIVER_CONFIG",
 };
 
-export const { addDriverConfig, showDriverConfig, searchDriverConfig } = createActions({
-  [actionTypes.ADD_DRIVERCONFIG]: state => state,
-  [actionTypes.SHOW_DRIVERCONFIG]: state => state,
-  [actionTypes.SEARCH_DRIVERCONFIG]: state => state,
+export const {
+  addDriverConfig,
+  showDriverConfig,
+  searchDriverConfig,
+} = createActions({
+  [actionTypes.ADD_DRIVER_CONFIG]: (state) => state,
+  [actionTypes.SHOW_DRIVER_CONFIG]: (state) => state,
+  [actionTypes.SEARCH_DRIVER_CONFIG]: (state) => state,
 });

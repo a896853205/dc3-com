@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useCallback } from "react";
 
-import { Form, Button, Select } from 'antd';
+import { Form, Button, Select } from "antd";
+import { useDispatch } from "react-redux";
+
+import { searchDriverConfig } from "../actions";
 
 const { Option } = Select;
 
 export default () => {
+  const dispatch = useDispatch();
+
+  const onFinish = useCallback(
+    (value) => {
+      dispatch(searchDriverConfig({ searchParam: value }));
+    },
+    [dispatch]
+  );
   return (
-    <Form labelCol={{ span: 4 }} wrapperCol={{ span: 10 }} layout="horizontal">
+    <Form
+      labelCol={{ span: 4 }}
+      wrapperCol={{ span: 10 }}
+      layout="horizontal"
+      onFinish={onFinish}
+    >
       <Form.Item label="所属模板">
         <Select></Select>
       </Form.Item>
