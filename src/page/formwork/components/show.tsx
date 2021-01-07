@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Table } from 'antd';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { showFormwork } from '../actions';
 
 const { Column } = Table;
 
 export default () => {
-  let formworks = useSelector((state: Formwork.ReduxState) => state.formworks);
+  let refresh = useSelector(
+    (state: Formwork.ReduxState) => state.formwork.refresh
+  );
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(refresh);
+
+    if (refresh) {
+      // TODO: HTTP请求formworks数据
+      dispatch(showFormwork());
+    }
+  }, [refresh, dispatch]);
 
   return (
-    <Table dataSource={formworks}>
+    <Table dataSource={[]}>
       <Column title='#' dataIndex='index' key='index' />
       <Column title='模板' dataIndex='name' key='name' />
       <Column title='公/私有' dataIndex='isPrivate' key='isPrivate' />

@@ -12,9 +12,22 @@ declare namespace Formwork {
   }
 
   /**
+   * 搜索模型参数
+   */
+  interface SearchParam {
+    name: string;
+    isPrivate: number;
+    drive: string;
+  }
+
+  /**
    * redux store
    */
   interface ReduxState {
-    formworks: Formwork.Item[];
+    formwork: {
+      formworks: Formwork.Item[];
+      refresh: boolean;
+      searchParam: SearchParam;
+    };
   }
 }
