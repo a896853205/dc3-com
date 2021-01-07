@@ -19,7 +19,7 @@ export default handleActions(
   {
     // 增加位号配置后将刷新值改为true.
     [actionTypes.ADD_TAGCONFIG]: state => {
-      console.log('REDUX ADD_FORMWORK');
+      console.log('REDUX ADD_TAGCONFIG');
 
       return produce(state, draftState => {
         draftState.refresh = true;
@@ -28,7 +28,7 @@ export default handleActions(
 
     // 搜索位号配置时将参数修改并将刷新值改为true
     [actionTypes.SEARCH_TAGCONFIG]: (state, { payload: { searchParam } }) => {
-      console.log('REDUX SEARCH_FORMWORK');
+      console.log('REDUX SEARCH_TAGCONFIG');
 
       return produce(state, draftState => {
         draftState.refresh = true;
@@ -38,7 +38,7 @@ export default handleActions(
 
     // 查询位号配置之后将刷新值改为false.
     [actionTypes.SHOW_TAGCONFIG]: state => {
-      console.log('REDUX SHOW_FORMWORK');
+      console.log('REDUX SHOW_TAGCONFIG');
 
       return produce(state, draftState => {
         draftState.refresh = false;
