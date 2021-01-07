@@ -41,4 +41,3 @@ declare namespace Tagname {
     };
   }
 }
-

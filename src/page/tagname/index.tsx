@@ -1,6 +1,6 @@
-import React, { lazy } from 'react';
+import React, { lazy } from "react";
 
-const Tagname = lazy(() => import('./components/compose'));
+const Tagname = lazy(() => import("./components/compose"));
 
 // 整体组件逻辑,lazy等等.
 export default () => <Tagname />;
