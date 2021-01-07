@@ -7,6 +7,8 @@ import CreateUser from 'src/page/create-user';
 import Formwork from 'src/page/formwork';
 import DriverConfiguration from 'src/page/driver-configuration';
 import Device from 'src/page/device';
+import Tagname from 'src/page/tagname';
+import TagConfig from 'src/page/tag-config';
 
 const config: RouteConfig[] = [
   {
@@ -21,6 +23,16 @@ const config: RouteConfig[] = [
       {
         path: '/formwork',
         component: Formwork,
+        exact: true,
+      },
+      {
+        path: '/tagname',
+        component: Tagname,
+        exact: true,
+      },
+      {
+        path: '/tagconfig',
+        component: TagConfig,
         exact: true,
       },
       {

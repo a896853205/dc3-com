@@ -18,6 +18,8 @@ const { Content, Footer, Sider } = Layout;
 const MENU_DATA = [
   new MenuItem('/', '首页'),
   new MenuItem('/formwork', '模板'),
+  new MenuItem('/tagname', '位号'),
+  new MenuItem('/tagconfig', '位号配置'),
   new MenuItemGroup('user-list', [
     {
       url: '/userList',
