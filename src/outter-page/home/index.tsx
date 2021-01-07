@@ -6,8 +6,8 @@ import { Layout } from 'antd';
 import './style.css';
 import 'antd/dist/antd.css';
 import AntdRouterMenu, {
-  MenuItem,
   MenuItemGroup,
+  MenuItem
 } from '../../components/Antd-router-menu/Antd-router-menu';
 import PageLoading from '../../components/page-loading';
 
@@ -30,18 +30,29 @@ const MENU_DATA = [
       name: '创建用户',
     },
   ]),
-  new MenuItem('/other', '其他'),
+  new MenuItemGroup('driver-configuration', [
+    {
+      url: '/driverConfiguration',
+      name: '驱动配置',
+    },
+  ]),
+  new MenuItemGroup('device', [
+    {
+      url: '/device',
+      name: '设备',
+    },
+  ]),
 ];
 
 export default ({ route }: RouteConfigComponentProps) => {
   return (
     <Layout>
-      <Sider theme='light' className='home-sider'>
+      <Sider theme="light" className="home-sider">
         <AntdRouterMenu menuData={MENU_DATA} />
       </Sider>
-      <div className='home-content-box'>
+      <div className="home-content-box">
         <Suspense fallback={<PageLoading />}>
-          <Content className='home-content'>
+          <Content className="home-content">
             {renderRoutes(route?.routes)}
           </Content>
         </Suspense>
