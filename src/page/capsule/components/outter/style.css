@@ -1,13 +1,26 @@
 .outter-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
 }
 
 .col12 {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-start: span 4;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.col3 {
+  grid-column-start: span 1;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.col6 {
+  grid-column-start: span 2;
   display: flex; 
   align-items: center;
   justify-content: center;

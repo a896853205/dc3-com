@@ -1,27 +1,28 @@
 import React from 'react';
-import BarChart from '../bar-chart';
-import CalendarHeadmapChart from '../calendar-heatmap-chart';
-import EncodeChart from '../encode-chart';
-import GradientMappingChart from '../gradient-mapping-chart';
-import RadarChart from '../radar-chart';
+
 import './style.css';
 
 export default () => (
   <div className="outter-container">
     <div className="col12 item-box">
-      <BarChart />
+      多选框
     </div>
-    <div className="item-box">
-      <GradientMappingChart />
+    <div className="col3 item-box">
+      <ul>
+        <li>U位使用率</li>
+        <li>功率监控/kW</li>
+        <li>能耗监控/mWh</li>
+        <li>UPS负载/kW</li>
+      </ul>
     </div>
-    <div className="item-box">
-      <RadarChart />
+    <div className="col6 item-box">
+      <div>总览</div>
+      <div>地图</div>
     </div>
-    <div className="col12 item-box">
-      <EncodeChart />
-    </div>
-    <div className="col12 item-box">
-      <CalendarHeadmapChart />
+    <div className="col3 item-box">
+      <div>
+        告警走势
+      </div>
     </div>
   </div>
 );
