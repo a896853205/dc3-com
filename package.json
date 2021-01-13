@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "5.8.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -19,6 +20,7 @@
     "ahooks": "^2.6.1",
     "antd": "^4.6.6",
     "axios": "^0.20.0",
+    "craco": "^0.0.3",
     "cross-env": "^7.0.2",
     "echarts": "^5.0.0",
     "echarts-gl": "^1.1.1",
@@ -35,9 +37,9 @@
     "uuid": "^8.3.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development react-scripts start",
-    "build": "cross-env NODE_ENV=production react-scripts build",
-    "test": "react-scripts test",
+    "start": "cross-env NODE_ENV=development craco start",
+    "build": "cross-env NODE_ENV=production craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "initDeploy": "pm2 deploy production setup",
     "deploy": "pm2 deploy production update"
