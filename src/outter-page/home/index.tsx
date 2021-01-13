@@ -6,7 +6,6 @@ import { Layout } from 'antd';
 import './style.css';
 import 'antd/dist/antd.css';
 import AntdRouterMenu, {
-  MenuItemGroup,
   MenuItem
 } from '../../components/Antd-router-menu/Antd-router-menu';
 import PageLoading from '../../components/page-loading';
@@ -20,30 +19,8 @@ const MENU_DATA = [
   new MenuItem('/formwork', '模板'),
   new MenuItem('/tagname', '位号'),
   new MenuItem('/tagconfig', '位号配置'),
-  new MenuItemGroup('user-list', [
-    {
-      url: '/userList',
-      name: '用户列表',
-    },
-  ]),
-  new MenuItemGroup('create-user', [
-    {
-      url: '/createUser',
-      name: '创建用户',
-    },
-  ]),
-  new MenuItemGroup('driver-configuration', [
-    {
-      url: '/driverConfiguration',
-      name: '驱动配置',
-    },
-  ]),
-  new MenuItemGroup('device', [
-    {
-      url: '/device',
-      name: '设备',
-    },
-  ]),
+  new MenuItem('/driverConfiguration', '驱动配置'),
+  new MenuItem('/device', '设备'),
 ];
 
 export default ({ route }: RouteConfigComponentProps) => {

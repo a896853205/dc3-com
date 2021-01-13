@@ -36,16 +36,6 @@ const config: RouteConfig[] = [
         exact: true,
       },
       {
-        path: "/userList",
-        component: UserList,
-        exact: true,
-      },
-      {
-        path: "/createUser",
-        component: CreateUser,
-        exact: true,
-      },
-      {
         path: "/driverConfiguration",
         component: DriverConfiguration,
         exact: true,
