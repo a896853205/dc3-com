@@ -1,17 +1,11 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as echarts from 'echarts';
 
-export default class LineChart extends React.Component<any, any> {
-  private lineRef: React.RefObject<HTMLDivElement>;
-  constructor(props: any) {
-    super(props);
-    this.lineRef = React.createRef();
-  }
-  componentDidMount() {
-    this.initCharts();
-  }
-  initCharts = () => {
-    let lineChart = echarts.init(this.lineRef.current as HTMLDivElement);
+export default () => {
+  let lineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let lineChart = echarts.init(lineRef.current as HTMLDivElement);
     let option = {
       tooltip: {
         trigger: 'axis' as 'axis',
@@ -56,8 +50,6 @@ export default class LineChart extends React.Component<any, any> {
       ],
     };
     lineChart.setOption(option);
-  };
-  render() {
-    return <div ref={this.lineRef} style={{ width: 300, height: 200 }}></div>;
-  }
-}
+  }, []);
+  return <div ref={lineRef} style={{ width: 300, height: 200 }}></div>;
+};

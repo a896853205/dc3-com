@@ -8,3 +8,8 @@
 [0115/123542.173:ERROR:process_info.cc(359)] UncheckedAllocate
 [0115/123553.166:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: 操作成功完成。 (0x0)
 [0115/123613.655:ERROR:process_info.cc(359)] UncheckedAllocate
+[0115/125414.607:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
+[0115/152230.869:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)
+[0115/185020.542:ERROR:process_info.cc(359)] UncheckedAllocate
+[0115/185020.569:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\鍥涘害澶曢槼\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\f569e3c2-c62f-4fbb-af0e-f0b40ac7dbd2: 系统找不到指定的路径。 (0x3)
+[0115/185054.289:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: 操作成功完成。 (0x0)

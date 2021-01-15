@@ -2,7 +2,7 @@ import React from 'react';
 
 import TMap from '../map';
 import PieChart from 'src/page/capsule/components/warning/pie-chart';
-import LineChart from 'src/page/capsule/components/warning/line-chart';
+import LineChart from 'src/page/capsule/components/warning/line-chart/index';
 import List from 'src/page/capsule/components/warning/list';
 
 import './style.css';

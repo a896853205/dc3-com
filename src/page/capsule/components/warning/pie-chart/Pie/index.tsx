@@ -1,17 +1,12 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as echarts from 'echarts';
 
-export default class PieChart extends React.Component<any, any> {
-  private pieRef: React.RefObject<HTMLDivElement>;
-  constructor(props: any) {
-    super(props);
-    this.pieRef = React.createRef();
-  }
-  componentDidMount() {
-    this.initCharts();
-  }
-  initCharts = () => {
-    let pieChart = echarts.init(this.pieRef.current as HTMLDivElement);
+function Pie(props: any) {
+  const { data } = props;
+  let pieRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let pieChart = echarts.init(pieRef.current as HTMLDivElement);
     let option = {
       title: {
         left: 'center',
@@ -31,10 +26,7 @@ export default class PieChart extends React.Component<any, any> {
           radius: '25%',
           center: ['50%', '25%'],
           selectedMode: 'single' as 'single',
-          data: [
-            { value: 15, name: '温湿度' },
-            { value: 0, name: '水浸' },
-          ],
+          data: data,
           emphasis: {
             itemStyle: {
               shadowBlur: 0,
@@ -46,8 +38,9 @@ export default class PieChart extends React.Component<any, any> {
       ],
     };
     pieChart.setOption(option);
-  };
-  render() {
-    return <div ref={this.pieRef} style={{ width: 300, height: 200 }}></div>;
-  }
+  }, [data]);
+
+  return <div ref={pieRef} style={{ width: 300, height: 200 }}></div>;
 }
+
+export default Pie;
