@@ -51,5 +51,6 @@ export default () => {
     };
     lineChart.setOption(option);
   }, []);
+  
   return <div ref={lineRef} style={{ width: 300, height: 200 }}></div>;
 };
