@@ -5,13 +5,16 @@ import TMap from '../map';
 import PieChart from 'src/page/capsule/components/warning/pie-chart';
 import LineChart from 'src/page/capsule/components/warning/line-chart/index';
 import List from 'src/page/capsule/components/warning/list';
+import MultipleChoice from '../multiple-choice';
 
 import './style.css';
 
 export default () => (
-  <div className='outter-container'>
-    <div className='col12 item-box'>多选框</div>
-    <div className='col3 item-box'>
+  <div className="outter-container">
+    <div className="col12 item-box">
+      <MultipleChoice />
+    </div>
+    <div className="col3 item-box">
       <ul>
         <li>U位使用率</li>
         <li>功率监控/kW</li>
