@@ -1,5 +1,6 @@
 import React from 'react';
 
+import BarChart from '../bar-chart';
 import TMap from '../map';
 import PieChart from 'src/page/capsule/components/warning/pie-chart';
 import LineChart from 'src/page/capsule/components/warning/line-chart/index';
@@ -19,7 +20,9 @@ export default () => (
       </ul>
     </div>
     <div className='col6'>
-      <div className='item-box'>总览</div>
+      <div className='item-box'>
+        <BarChart />
+      </div>
       <div className='item-box'>
         <TMap />
       </div>

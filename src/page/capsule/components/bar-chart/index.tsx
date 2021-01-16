@@ -110,6 +110,6 @@ export default class BarChart extends React.Component<any, any> {
     };
   }
   render() {
-    return <div ref={this.myRef} style={{ width: 700, height: 400 }}></div>;
+    return <div ref={this.myRef} style={{ width: 600, height: 350 }}></div>;
   }
 }
