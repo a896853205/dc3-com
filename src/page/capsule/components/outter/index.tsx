@@ -6,20 +6,32 @@ import PieChart from 'src/page/capsule/components/warning/pie-chart';
 import LineChart from 'src/page/capsule/components/warning/line-chart/index';
 import List from 'src/page/capsule/components/warning/list';
 import MultipleChoice from '../multiple-choice';
+import EnergyChart from '../Energy-monitor';
+import UpsChart from '../ups';
+import UTagChart from '../utag';
+import RateChart from '../rate-monitor';
 
 import './style.css';
 
 export default () => (
-  <div className="outter-container">
-    <div className="col12 item-box">
+  <div className='outter-container'>
+    <div className='col12 item-box'>
       <MultipleChoice />
     </div>
-    <div className="col3 item-box">
+    <div className='col3 item-box'>
       <ul>
-        <li>U位使用率</li>
-        <li>功率监控/kW</li>
-        <li>能耗监控/mWh</li>
-        <li>UPS负载/kW</li>
+        <li>
+          <UTagChart />
+        </li>
+        <li>
+          <RateChart />
+        </li>
+        <li>
+          <EnergyChart />
+        </li>
+        <li>
+          <UpsChart />
+        </li>
       </ul>
     </div>
     <div className='col6'>
