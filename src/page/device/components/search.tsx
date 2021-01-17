@@ -1,15 +1,15 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import { Form, Button, Input, Select } from "antd";
-import { useDispatch } from "react-redux";
+import { Form, Button, Input, Select } from 'antd';
+import { useDispatch } from 'react-redux';
 
-import { searchDevice } from "../actions";
+import { searchDevice } from '../actions';
 
 export default () => {
   const dispatch = useDispatch();
 
   const onFinish = useCallback(
-    (value) => {
+    value => {
       dispatch(searchDevice({ searchParam: value }));
     },
     [dispatch]
@@ -25,9 +25,6 @@ export default () => {
         <Input placeholder="设备" />
       </Form.Item>
       <Form.Item label="所属模板">
-        <Select></Select>
-      </Form.Item>
-      <Form.Item label="所属分组" className="attribute">
         <Select></Select>
       </Form.Item>
       <Form.Item wrapperCol={{ span: 14, offset: 4 }}>
