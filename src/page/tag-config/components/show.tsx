@@ -108,18 +108,18 @@ export default () => {
   ];
   return (
     <Table dataSource={data}>
-      <Column title="#" dataIndex="index" key="index" />
-      <Column title="所属设备" dataIndex="dev" key="dev" />
-      <Column title="所属位号" dataIndex="tagname" key="tagname" />
-      <Column title="属性" dataIndex="attribute" key="attribute" />
-      <Column title="内容" dataIndex="content" key="content" />
-      <Column title="创建日期" dataIndex="createTime" key="createTime" />
+      <Column title='#' dataIndex='index' key='index' />
+      <Column title='所属设备' dataIndex='dev' key='dev' />
+      <Column title='所属位号' dataIndex='tagname' key='tagname' />
+      <Column title='属性' dataIndex='attribute' key='attribute' />
+      <Column title='内容' dataIndex='content' key='content' />
+      <Column title='创建日期' dataIndex='createTime' key='createTime' />
       <Column
-        title="操作"
-        dataIndex=""
-        key=""
+        title='操作'
+        dataIndex=''
+        key=''
         render={() => (
-          <Space size="middle">
+          <Space size='middle'>
             <Typography.Link>
               <EditOutlined />
               编辑
