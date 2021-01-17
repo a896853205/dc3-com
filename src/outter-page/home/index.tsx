@@ -6,7 +6,7 @@ import { Layout } from 'antd';
 import './style.css';
 import 'antd/dist/antd.css';
 import AntdRouterMenu, {
-  MenuItem
+  MenuItem,
 } from '../../components/Antd-router-menu/Antd-router-menu';
 import PageLoading from '../../components/page-loading';
 
@@ -21,6 +21,7 @@ const MENU_DATA = [
   new MenuItem('/tagconfig', '位号配置'),
   new MenuItem('/driverConfiguration', '驱动配置'),
   new MenuItem('/device', '设备'),
+  new MenuItem('/microService', '微服务设置'),
 ];
 
 export default ({ route }: RouteConfigComponentProps) => {
