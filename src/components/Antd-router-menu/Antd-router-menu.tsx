@@ -3,6 +3,7 @@ import React from 'react';
 import { Menu } from 'antd';
 import { v1 as uuid } from 'uuid';
 import { Link } from 'react-router-dom';
+import SubMenu from 'antd/lib/menu/SubMenu';
 
 /**
  * @class 单独的导航栏
@@ -41,7 +42,7 @@ export default (props: Props) => {
   const { menuData } = props;
 
   return (
-    <Menu theme='light' mode='inline'>
+    <Menu theme="light" mode="inline">
       {menuData.map(menuDataItem => {
         if (menuDataItem instanceof MenuItem) {
           return (
@@ -53,7 +54,7 @@ export default (props: Props) => {
           );
         } else if (menuDataItem instanceof MenuItemGroup) {
           return (
-            <Menu.ItemGroup key={uuid()} title={menuDataItem.title}>
+            <SubMenu key={uuid()} title={menuDataItem.title}>
               {menuDataItem.children.map(menuSubItem => {
                 return (
                   <Menu.Item key={uuid()}>
@@ -63,7 +64,7 @@ export default (props: Props) => {
                   </Menu.Item>
                 );
               })}
-            </Menu.ItemGroup>
+            </SubMenu>
           );
         } else {
           return null;

@@ -8,6 +8,7 @@ import Device from 'src/page/device';
 import Tagname from 'src/page/tagname';
 import TagConfig from 'src/page/tag-config';
 import MicroService from 'src/page/micro-service';
+import Timeline from 'src/page/timeline';
 
 const config: RouteConfig[] = [
   {
@@ -47,6 +48,10 @@ const config: RouteConfig[] = [
       {
         path: '/microService',
         component: MicroService,
+      },
+      {
+        path: '/timeline',
+        component: Timeline,
         exact: true,
       },
     ],
