@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs } from 'antd';
 
-// import Pie from './Pie';
+import Pie from './Pie';
 
 const { TabPane } = Tabs;
 
@@ -22,7 +22,7 @@ export default () => {
     <div>
       <div>
         <Tabs title="告警趋势" defaultActiveKey="1" centered>
-          {/* <TabPane tab="前天" key="1">
+          <TabPane tab="前天" key="1">
             <Pie data={data1} />
           </TabPane>
           <TabPane tab="昨天" key="2">
@@ -30,7 +30,7 @@ export default () => {
           </TabPane>
           <TabPane tab="今天" key="3">
             <Pie data={data3} />
-          </TabPane> */}
+          </TabPane>
         </Tabs>
       </div>
     </div>
