@@ -6,7 +6,7 @@ import { Layout } from 'antd';
 import './style.css';
 import 'antd/dist/antd.css';
 import AntdRouterMenu, {
-  MenuItem
+  MenuItem,
 } from '../../components/Antd-router-menu/Antd-router-menu';
 import PageLoading from '../../components/page-loading';
 
@@ -15,12 +15,13 @@ const { Content, Footer, Sider } = Layout;
  * 配置导航栏链接和文字
  */
 const MENU_DATA = [
-  new MenuItem('/', '首页'),
+  // new MenuItem('/', '显示'),
   new MenuItem('/formwork', '模板'),
   new MenuItem('/tagname', '位号'),
   new MenuItem('/tagconfig', '位号配置'),
   new MenuItem('/driverConfiguration', '驱动配置'),
   new MenuItem('/device', '设备'),
+  new MenuItem('/timeline', '时间轴'),
 ];
 
 export default ({ route }: RouteConfigComponentProps) => {
