@@ -5,35 +5,7 @@ import { v1 as uuid } from 'uuid';
 import { Link } from 'react-router-dom';
 import SubMenu from 'antd/lib/menu/SubMenu';
 
-/**
- * @class 单独的导航栏
- */
-export class MenuItem {
-  url = '';
-  name = '';
-  icon? = '';
-
-  constructor(url: string, name: string, icon: string = '') {
-    this.url = url;
-    this.name = name;
-    this.icon = icon;
-  }
-}
-
-/**
- * @class 组导航栏带有标题
- */
-export class MenuItemGroup {
-  title: string = '';
-  children: MenuItem[] = [];
-
-  constructor(title: string, children: MenuItem[]) {
-    this.title = title;
-    this.children = children.map(
-      child => new MenuItem(child.url, child.name, child.icon)
-    );
-  }
-}
+import { MenuItem, MenuItemGroup } from '../Menu';
 export interface Props {
   menuData: (MenuItem | MenuItemGroup)[];
 }
@@ -42,7 +14,7 @@ export default (props: Props) => {
   const { menuData } = props;
 
   return (
-    <Menu theme="light" mode="inline">
+    <Menu theme='light' mode='inline'>
       {menuData.map(menuDataItem => {
         if (menuDataItem instanceof MenuItem) {
           return (

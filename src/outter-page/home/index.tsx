@@ -2,13 +2,12 @@ import React, { Suspense } from 'react';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 
 import { Layout } from 'antd';
+import { useLocalStorageState } from 'ahooks';
 
 import './style.css';
 import 'antd/dist/antd.css';
-import AntdRouterMenu, {
-  MenuItem,
-  MenuItemGroup,
-} from '../../components/Antd-router-menu/Antd-router-menu';
+import AntdRouterMenu from '../../components/Antd-router-menu/Antd-router-menu';
+import { MenuItem, MenuItemGroup } from '../../components/Menu';
 import PageLoading from '../../components/page-loading';
 
 const { Content, Footer, Sider } = Layout;
@@ -29,10 +28,11 @@ const MENU_DATA = [
 ];
 
 export default ({ route }: RouteConfigComponentProps) => {
+  const [menu] = useLocalStorageState('menu', MENU_DATA);
   return (
     <Layout>
       <Sider theme='light' className='home-sider'>
-        <AntdRouterMenu menuData={MENU_DATA} />
+        <AntdRouterMenu menuData={menu} />
       </Sider>
       <div className='home-content-box'>
         <Suspense fallback={<PageLoading />}>
