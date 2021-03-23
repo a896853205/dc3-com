@@ -15,7 +15,7 @@ export default () => {
   ];
   return (
     <>
-      <Timeline mode="alternate">
+      <Timeline>
         <Timeline.Item dot={<ClockCircleOutlined />}>
           <Content title="设备接入" description={description[0]} />
         </Timeline.Item>

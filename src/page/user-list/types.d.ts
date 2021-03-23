@@ -1,21 +1,23 @@
-declare namespace UserList {
+declare namespace User {
   /**
-   * 表格数据
+   * 用户类型
    */
   interface Item {
     uuid: string;
-    firstName: string;
-    lastName: string;
+    username: string;
+    password: string;
     email: string;
     phone: string;
-    gender: 'male' | 'female';
+    role: '管理员' | '普通用户';
   }
-  
+
   /**
-   * antd表格结构
+   * redux store
    */
-  interface Result {
-    total: number;
-    list: UserList.Item[];
+  interface ReduxState {
+    user: {
+      userList: User.Item[];
+      refresh: boolean;
+    };
   }
 }

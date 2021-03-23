@@ -8,6 +8,7 @@ import Device from 'src/page/device';
 import Tagname from 'src/page/tagname';
 import TagConfig from 'src/page/tag-config';
 import Timeline from 'src/page/timeline';
+import UserList from 'src/page/user-list';
 
 const config: RouteConfig[] = [
   {
@@ -47,6 +48,11 @@ const config: RouteConfig[] = [
       {
         path: '/timeline',
         component: Timeline,
+        exact: true,
+      },
+      {
+        path: '/userList',
+        component: UserList,
         exact: true,
       },
     ],

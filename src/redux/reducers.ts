@@ -1,10 +1,11 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import formworkReducer from "../page/formwork/reducers";
-import tagnameReducer from "../page/tagname/reducers";
-import tagConfigReducer from "../page/tag-config/reducers";
-import deviceReducer from "../page/device/reducers";
-import driverConfigReducer from "../page/driver-configuration/reducers";
+import formworkReducer from '../page/formwork/reducers';
+import tagnameReducer from '../page/tagname/reducers';
+import tagConfigReducer from '../page/tag-config/reducers';
+import deviceReducer from '../page/device/reducers';
+import driverConfigReducer from '../page/driver-configuration/reducers';
+import userReducer from '../page/user-list/reducers';
 
 let reducer = combineReducers({
   formwork: formworkReducer,
@@ -12,6 +13,7 @@ let reducer = combineReducers({
   tagConfig: tagConfigReducer,
   device: deviceReducer,
   driverConfig: driverConfigReducer,
+  user: userReducer,
 });
 
 export default reducer;

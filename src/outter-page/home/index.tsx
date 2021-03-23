@@ -25,6 +25,7 @@ const MENU_DATA = [
     new MenuItem('/driverConfiguration', '驱动配置'),
     new MenuItem('/device', '设备'),
   ]),
+  new MenuItem('/userList', '用户管理'),
 ];
 
 export default ({ route }: RouteConfigComponentProps) => {
