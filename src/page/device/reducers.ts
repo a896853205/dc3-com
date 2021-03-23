@@ -10,7 +10,7 @@ const initialState: Device.ReduxState = {
     searchParam: {
       device: '',
       dev: '',
-      group: ''
+      group: '',
     },
   },
 };
