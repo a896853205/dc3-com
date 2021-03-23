@@ -1,8 +1,8 @@
 /**
  * UPS负载
  */
-import React, { useRef, useEffect } from "react";
-import * as echarts from "echarts";
+import React, { useRef, useEffect } from 'react';
+import * as echarts from 'echarts';
 
 const UpsChart = () => {
   let upsRef = useRef<HTMLDivElement>(null);
@@ -11,37 +11,32 @@ const UpsChart = () => {
     let upsChart = echarts.init(upsRef.current as HTMLDivElement);
     let option = {
       title: {
-        text: "UPS负载/kW",
+        text: 'UPS负载/kW',
         textStyle: {
           fontSize: 12,
         },
       },
       tooltip: {
-        trigger: "axis" as "axis",
+        trigger: 'axis' as 'axis',
       },
       legend: {
-        data: ["温度", "湿度"],
-        x: "right",
-        y: "top",
+        data: ['温湿度传感器'],
+        x: 'right',
+        y: 'top',
       },
       xAxis: {
-        type: "category" as "category",
+        type: 'category' as 'category',
         boundaryGap: false,
-        data: ["01-09", "01-10", "01-11", "01-12", "01-13", "01-14", "01-15"],
+        data: ['01-09', '01-10', '01-11', '01-12', '01-13', '01-14', '01-15'],
       },
       yAxis: {
-        type: "value" as "value",
+        type: 'value' as 'value',
       },
       series: [
         {
-          name: "温度",
-          type: "line" as "line",
+          name: '温湿度传感器',
+          type: 'line' as 'line',
           data: [0.3, 0.5, 0.3, 0.6, 0.6, 0.7, 0.5],
-        },
-        {
-          name: "湿度",
-          type: "line" as "line",
-          data: [0.4, 0.6, 0.7, 0.5, 0.4, 0.5, 0.4],
         },
       ],
     };
