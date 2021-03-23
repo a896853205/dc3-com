@@ -10,6 +10,8 @@ import TagConfig from 'src/page/tag-config';
 import MicroService from 'src/page/micro-service';
 import Timeline from 'src/page/timeline';
 import DeviceCurrentTimeData from 'src/page/device-current-time-data';
+import WarningData from 'src/page/warning-data';
+import WarningSet from 'src/page/warning-set';
 
 const config: RouteConfig[] = [
   {
@@ -58,6 +60,16 @@ const config: RouteConfig[] = [
       {
         path: '/deviceCurrentTimeData',
         component: DeviceCurrentTimeData,
+        exact: true,
+      },
+      {
+        path: '/warningData',
+        component: WarningData,
+        exact: true,
+      },
+      {
+        path: '/warningSet',
+        component: WarningSet,
         exact: true,
       },
     ],
