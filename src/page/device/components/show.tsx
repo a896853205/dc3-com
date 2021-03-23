@@ -68,24 +68,20 @@ export default () => {
   ];
   return (
     <Table dataSource={data}>
-      <Column title="#" dataIndex="index" key="index"></Column>
-      <Column title="设备" dataIndex="device" key="devce"></Column>
-      <Column title="所属模板" dataIndex="template" key="template"></Column>
+      <Column title='#' dataIndex='index' key='index' />
+      <Column title='设备' dataIndex='device' key='devce' />
+      <Column title='所属模板' dataIndex='template' key='template' />
+      <Column title='存储类型' dataIndex='storageStyle' key='storageStyle' />
+      <Column title='状态' dataIndex='state' key='state' />
+      <Column title='备注' dataIndex='remarks' key='remarks' />
+      <Column title='修改日期' dataIndex='updateTime' key='updateTime' />
+      <Column title='创建日期' dataIndex='createTime' key='createTime' />
       <Column
-        title="存储类型"
-        dataIndex="storageStyle"
-        key="storageStyle"
-      ></Column>
-      <Column title="状态" dataIndex="state" key="state"></Column>
-      <Column title="备注" dataIndex="remarks" key="remarks"></Column>
-      <Column title="修改日期" dataIndex="updateTime" key="updateTime"></Column>
-      <Column title="创建日期" dataIndex="createTime" key="createTime"></Column>
-      <Column
-        title="操作"
-        dataIndex="operation"
-        key="operation"
+        title='操作'
+        dataIndex='operation'
+        key='operation'
         render={() => (
-          <Space size="middle">
+          <Space size='middle'>
             <Typography.Link>
               <EditOutlined />
               编辑
@@ -96,7 +92,7 @@ export default () => {
             </Typography.Link>
           </Space>
         )}
-      ></Column>
+      />
     </Table>
   );
 };
