@@ -9,6 +9,7 @@ import Tagname from 'src/page/tagname';
 import TagConfig from 'src/page/tag-config';
 import MicroService from 'src/page/micro-service';
 import Timeline from 'src/page/timeline';
+import DeviceCurrentTimeData from 'src/page/device-current-time-data';
 
 const config: RouteConfig[] = [
   {
@@ -52,6 +53,11 @@ const config: RouteConfig[] = [
       {
         path: '/timeline',
         component: Timeline,
+        exact: true,
+      },
+      {
+        path: '/deviceCurrentTimeData',
+        component: DeviceCurrentTimeData,
         exact: true,
       },
     ],

@@ -25,10 +25,15 @@ const MENU_DATA = [
     new MenuItem('/device', '设备'),
   ]),
   new MenuItem('/microService', '微服务设置'),
+  new MenuItemGroup('设备数据管理', [
+    new MenuItem('/deviceParamConfig', '采集参数设置'),
+    new MenuItem('/deviceCurrentTimeData', '实时数据查看'),
+    new MenuItem('/deviceHistoryData', '历史数据管理'),
+  ]),
 ];
 
 export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
-  []
+  MENU_DATA
 );
 
 export default ({ route }: RouteConfigComponentProps) => {
