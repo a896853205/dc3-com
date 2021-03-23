@@ -24,7 +24,6 @@ const MENU_DATA = [
     new MenuItem('/driverConfiguration', '驱动配置'),
     new MenuItem('/device', '设备'),
   ]),
-<<<<<<< HEAD
   new MenuItemGroup('告警管理', [
     new MenuItem('/warningData', '告警数据管理'),
     new MenuItem('/warningSet', '告警方式设置'),
@@ -35,9 +34,7 @@ const MENU_DATA = [
     new MenuItem('/deviceCurrentTimeData', '实时数据查看'),
     new MenuItem('/deviceHistoryData', '历史数据管理'),
   ]),
-=======
   new MenuItem('/userList', '用户管理'),
->>>>>>> c4f67f17e0110558ef966b85b8241e4ddea88418
 ];
 
 export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
