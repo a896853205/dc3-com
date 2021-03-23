@@ -24,7 +24,10 @@ const MENU_DATA = [
     new MenuItem('/driverConfiguration', '驱动配置'),
     new MenuItem('/device', '设备'),
   ]),
-  new MenuItemGroup('告警管理', [new MenuItem('/warningData', '告警数据管理')]),
+  new MenuItemGroup('告警管理', [
+    new MenuItem('/warningData', '告警数据管理'),
+    new MenuItem('/warningSet', '告警方式设置'),
+  ]),
   new MenuItem('/microService', '微服务设置'),
 ];
 
