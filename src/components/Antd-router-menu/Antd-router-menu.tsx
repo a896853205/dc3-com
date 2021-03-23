@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo } from 'react';
 
 import { Menu } from 'antd';
 import { v1 as uuid } from 'uuid';
@@ -10,10 +10,11 @@ export interface Props {
   menuData: (MenuItem | MenuItemGroup)[];
 }
 
-export default (props: Props) => {
+export default memo((props: Props) => {
   const { menuData } = props;
+
   return (
-    <Menu theme="light" mode="inline">
+    <Menu theme='light' mode='inline'>
       {menuData.map(menuDataItem => {
         if (menuDataItem instanceof MenuItem) {
           return (
@@ -25,7 +26,7 @@ export default (props: Props) => {
           );
         } else if (menuDataItem instanceof MenuItemGroup) {
           return (
-            <SubMenu key={menuDataItem.title} title={menuDataItem.title}>
+            <SubMenu key={uuid()} title={menuDataItem.title}>
               {menuDataItem.children.map(menuSubItem => {
                 return (
                   <Menu.Item key={uuid()}>
@@ -43,4 +44,4 @@ export default (props: Props) => {
       })}
     </Menu>
   );
-};
+});
