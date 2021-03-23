@@ -12,6 +12,7 @@ import Timeline from 'src/page/timeline';
 import DeviceCurrentTimeData from 'src/page/device-current-time-data';
 import WarningData from 'src/page/warning-data';
 import WarningSet from 'src/page/warning-set';
+import UserList from 'src/page/user-list';
 
 const config: RouteConfig[] = [
   {
@@ -70,6 +71,11 @@ const config: RouteConfig[] = [
       {
         path: '/warningSet',
         component: WarningSet,
+        exact: true,
+      },
+      {
+        path: '/userList',
+        component: UserList,
         exact: true,
       },
     ],

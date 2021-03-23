@@ -12,6 +12,7 @@ export interface Props {
 
 export default (props: Props) => {
   const { menuData } = props;
+  // FIXME：解决导航栏显示问题
 
   return (
     <Menu theme='light' mode='inline'>
