@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Space, Table, Typography } from 'antd';
+import { Space, Table, Typography, Tag } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -29,7 +29,7 @@ export default () => {
       name: 'Sage',
       email: '123456@qq.com',
       tel: '8888888',
-      role: '管理员',
+      tags: ['设备接入', '设备数据管理', '状态监控'],
     },
     {
       key: 2,
@@ -37,7 +37,7 @@ export default () => {
       name: 'Sage',
       email: '123456@qq.com',
       tel: '8888888',
-      role: '普通用户',
+      tags: ['设备接入', '告警管理', '用户管理'],
     },
     {
       key: 3,
@@ -45,7 +45,7 @@ export default () => {
       name: 'Sage',
       email: '123456@qq.com',
       tel: '8888888',
-      role: '管理员',
+      tags: ['设备接入', '状态监控'],
     },
     {
       key: 4,
@@ -53,7 +53,7 @@ export default () => {
       name: 'Sage',
       email: '123456@qq.com',
       tel: '8888888',
-      role: '管理员',
+      tags: ['设备接入'],
     },
   ];
   return (
@@ -62,7 +62,43 @@ export default () => {
       <Column title="用户名" dataIndex="name" key="name" />
       <Column title="邮箱" dataIndex="email" key="email" />
       <Column title="电话" dataIndex="tel" key="tel" />
-      <Column title="权限" dataIndex="role" key="role" />
+      <Column
+        title="可查看模块"
+        dataIndex="tags"
+        key="tags"
+        render={tags => (
+          <>
+            {tags.map((tag: any) => {
+              let color;
+              switch (tag) {
+                case '首页展示':
+                  color = 'blue';
+                  break;
+                case '设备接入':
+                  color = 'green';
+                  break;
+                case '设备数据管理':
+                  color = 'geekblue';
+                  break;
+                case '状态监控':
+                  color = 'orange';
+                  break;
+                case '告警管理':
+                  color = 'volcano';
+                  break;
+                case '用户管理':
+                  color = 'purple';
+                  break;
+              }
+              return (
+                <Tag color={color} key={tag}>
+                  {tag.toUpperCase()}
+                </Tag>
+              );
+            })}
+          </>
+        )}
+      />
       <Column
         title="操作"
         dataIndex=""

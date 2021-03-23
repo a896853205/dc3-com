@@ -3,13 +3,11 @@
  */
 import React, { useCallback } from 'react';
 
-import { Button, Modal, Form, Input, Select } from 'antd';
+import { Button, Modal, Form, Input, Checkbox, Row, Col } from 'antd';
 import { useBoolean } from 'ahooks';
 import { useDispatch } from 'react-redux';
 
 import { addUser } from '../actions';
-
-const { Option } = Select;
 
 export default () => {
   const [isShow, { setTrue, setFalse }] = useBoolean(false);
@@ -102,11 +100,47 @@ export default () => {
           >
             <Input style={{ width: '100%' }} />
           </Form.Item>
-          <Form.Item label="权限" required>
-            <Select>
-              <Option value="manager">管理员</Option>
-              <Option value="common">普通用户</Option>
-            </Select>
+          <Form.Item name="tags" label="可查看模块">
+            <Checkbox.Group>
+              <Row>
+                <Col span={8}>
+                  <Checkbox value="index" style={{ lineHeight: '32px' }}>
+                    首页展示
+                  </Checkbox>
+                </Col>
+                <Col span={8}>
+                  <Checkbox
+                    value="device-access"
+                    style={{ lineHeight: '32px' }}
+                  >
+                    设备接入
+                  </Checkbox>
+                </Col>
+                <Col span={8}>
+                  <Checkbox
+                    value="device-manage"
+                    style={{ lineHeight: '32px' }}
+                  >
+                    设备数据管理
+                  </Checkbox>
+                </Col>
+                <Col span={8}>
+                  <Checkbox value="status" style={{ lineHeight: '32px' }}>
+                    状态监控
+                  </Checkbox>
+                </Col>
+                <Col span={8}>
+                  <Checkbox value="warnning" style={{ lineHeight: '32px' }}>
+                    告警管理
+                  </Checkbox>
+                </Col>
+                <Col span={8}>
+                  <Checkbox value="user" style={{ lineHeight: '32px' }}>
+                    用户管理
+                  </Checkbox>
+                </Col>
+              </Row>
+            </Checkbox.Group>
           </Form.Item>
         </Form>
       </Modal>

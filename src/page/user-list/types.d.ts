@@ -8,7 +8,7 @@ declare namespace User {
     password: string;
     email: string;
     phone: string;
-    role: '管理员' | '普通用户';
+    tags: [];
   }
 
   /**
