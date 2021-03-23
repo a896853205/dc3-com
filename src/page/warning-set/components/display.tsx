@@ -33,17 +33,17 @@ export default () => {
   ];
   return (
     <Table dataSource={data}>
-      <Column title="#" dataIndex="index" key="index"></Column>
-      <Column title="等级" dataIndex="level" key="level"></Column>
-      <Column title="内容" dataIndex="content" key="content"></Column>
-      <Column title="修改日期" dataIndex="updateTime" key="updateTime"></Column>
-      <Column title="创建日期" dataIndex="createTime" key="createTime"></Column>
+      <Column title='#' dataIndex='index' key='index'></Column>
+      <Column title='等级' dataIndex='level' key='level'></Column>
+      <Column title='内容' dataIndex='content' key='content'></Column>
+      <Column title='修改日期' dataIndex='updateTime' key='updateTime'></Column>
+      <Column title='创建日期' dataIndex='createTime' key='createTime'></Column>
       <Column
-        title="操作"
-        dataIndex="operation"
-        key="operation"
+        title='操作'
+        dataIndex='operation'
+        key='operation'
         render={() => (
-          <Space size="middle">
+          <Space size='middle'>
             <Typography.Link>
               <EditOutlined />
               编辑
@@ -53,8 +53,7 @@ export default () => {
               删除
             </Typography.Link>
           </Space>
-        )}
-      ></Column>
+        )}></Column>
     </Table>
   );
 };
