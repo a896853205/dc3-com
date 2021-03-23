@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Card, Image } from 'antd';
 
@@ -9,13 +9,12 @@ export default (props: any) => {
       <Card
         title={title}
         hoverable
-        headStyle={{ fontSize: '16px', fontWeight: 'bold' }}
-      >
+        headStyle={{ fontSize: '16px', fontWeight: 'bold' }}>
         <Card.Meta
           avatar={
             <Image
               width={200}
-              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+              src='https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
             />
           }
           description={description}

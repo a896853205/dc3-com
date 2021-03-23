@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 
 import { Layout } from 'antd';
-import { useLocalStorageState } from 'ahooks';
 
 import './style.css';
 import 'antd/dist/antd.css';
@@ -11,6 +10,7 @@ import { MenuItem, MenuItemGroup } from '../../components/Menu';
 import PageLoading from '../../components/page-loading';
 
 const { Content, Footer, Sider } = Layout;
+
 /**
  * 配置导航栏链接和文字
  */
@@ -27,21 +27,26 @@ const MENU_DATA = [
   new MenuItem('/microService', '微服务设置'),
 ];
 
+export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
+  []
+);
+
 export default ({ route }: RouteConfigComponentProps) => {
-  const [menu] = useLocalStorageState('menu', MENU_DATA);
   return (
-    <Layout>
-      <Sider theme='light' className='home-sider'>
-        <AntdRouterMenu menuData={menu} />
-      </Sider>
-      <div className='home-content-box'>
-        <Suspense fallback={<PageLoading />}>
-          <Content className='home-content'>
-            {renderRoutes(route?.routes)}
-          </Content>
-        </Suspense>
-        <Footer>code@Eric design@Luna</Footer>
-      </div>
-    </Layout>
+    <MenuContext.Provider value={MENU_DATA}>
+      <Layout>
+        <Sider theme='light' className='home-sider'>
+          <AntdRouterMenu menuData={MENU_DATA} />
+        </Sider>
+        <div className='home-content-box'>
+          <Suspense fallback={<PageLoading />}>
+            <Content className='home-content'>
+              {renderRoutes(route?.routes)}
+            </Content>
+          </Suspense>
+          <Footer>code@Eric design@Luna</Footer>
+        </div>
+      </Layout>
+    </MenuContext.Provider>
   );
 };
