@@ -12,8 +12,8 @@ export default () => {
       },
       legend: {
         top: '2%',
-        left: '25%',
-        data: ['温湿度', '水浸'],
+        left: '30%',
+        data: ['温湿度传感器'],
       },
       grid: {
         left: '10%',
@@ -36,21 +36,15 @@ export default () => {
       },
       series: [
         {
-          name: '温湿度',
+          name: '温湿度传感器',
           type: 'line' as 'line',
           stack: '总量',
-          data: [120, 132, 101, 134, 90, 230, 210],
-        },
-        {
-          name: '水浸',
-          type: 'line' as 'line',
-          stack: '总量',
-          data: [220, 182, 191, 234, 290, 330, 310],
+          data: [50, 60, 78, 90, 68, 95, 100],
         },
       ],
     };
     lineChart.setOption(option);
   }, []);
-  
+
   return <div ref={lineRef} style={{ width: 300, height: 200 }}></div>;
 };

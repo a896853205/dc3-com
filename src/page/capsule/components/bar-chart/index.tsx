@@ -18,7 +18,7 @@ export default class BarChart extends React.Component<any, any> {
     let data = this.generateData(this.state.dataCount);
     let option = {
       title: {
-        text: (echarts as any).format.addCommas(this.state.dataCount) + ' Data',
+        text: '平均数据展示',
         left: 10,
       },
       toolbox: {

@@ -20,7 +20,7 @@ const config: RouteConfig[] = [
     component: Home,
     routes: [
       {
-        path: '/',
+        path: '/capsule',
         component: Capsule,
         exact: true,
       },
