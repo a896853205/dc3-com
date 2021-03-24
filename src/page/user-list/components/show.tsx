@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { showUser } from '../actions';
 
+import 'src/page/style/style.css';
+
 const { Column } = Table;
 
 export default () => {
@@ -57,15 +59,15 @@ export default () => {
     },
   ];
   return (
-    <Table dataSource={data}>
-      <Column title="#" dataIndex="index" key="index" />
-      <Column title="用户名" dataIndex="name" key="name" />
-      <Column title="邮箱" dataIndex="email" key="email" />
-      <Column title="电话" dataIndex="tel" key="tel" />
+    <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
+      <Column title='#' dataIndex='index' key='index' />
+      <Column title='用户名' dataIndex='name' key='name' />
+      <Column title='邮箱' dataIndex='email' key='email' />
+      <Column title='电话' dataIndex='tel' key='tel' />
       <Column
-        title="可查看模块"
-        dataIndex="tags"
-        key="tags"
+        title='可查看模块'
+        dataIndex='tags'
+        key='tags'
         render={tags => (
           <>
             {tags.map((tag: any) => {
@@ -100,11 +102,11 @@ export default () => {
         )}
       />
       <Column
-        title="操作"
-        dataIndex=""
-        key=""
+        title='操作'
+        dataIndex=''
+        key=''
         render={() => (
-          <Space size="middle">
+          <Space size='middle'>
             <Typography.Link>
               <EditOutlined />
               编辑

@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showDevice } from '../actions';
 import Column from 'antd/lib/table/Column';
 
+import 'src/page/style/style.css';
+
 export default () => {
   let refresh = useSelector((state: Device.ReduxState) => state.device.refresh);
   let dispatch = useDispatch();
@@ -67,7 +69,7 @@ export default () => {
     },
   ];
   return (
-    <Table dataSource={data}>
+    <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
       <Column title='设备' dataIndex='device' key='devce' />
       <Column title='所属模板' dataIndex='template' key='template' />

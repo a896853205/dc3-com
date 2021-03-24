@@ -37,6 +37,7 @@ const MENU_DATA = [
     new MenuItem('/capsule', '设备状态监控'),
     new MenuItem('/microService', '平台状态监控'),
   ]),
+  new MenuItem('/userList', '用户管理'),
 ];
 
 export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
