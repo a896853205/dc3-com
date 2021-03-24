@@ -1,8 +1,8 @@
 import React from 'react';
 
 import BarChart from '../bar-chart';
-import TMap from '../map';
 import WarningNumber from 'src/page/capsule/components/warning/warning-number';
+import StepLine from '../step-line/index';
 import LineChart from 'src/page/capsule/components/warning/line-chart/index';
 import List from 'src/page/capsule/components/warning/list';
 import EnergyChart from '../Energy-monitor';
@@ -31,7 +31,7 @@ export default () => (
         <BarChart />
       </div>
       <div className='item-box'>
-        <TMap />
+        <StepLine />
       </div>
     </div>
     <div className='col3 item-box'>
