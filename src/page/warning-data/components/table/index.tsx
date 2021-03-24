@@ -1,6 +1,8 @@
 import React from 'react';
 import { Table, Input } from 'antd';
 
+import 'src/page/style/style.css';
+
 const { Search } = Input;
 const columns = [
   {
@@ -96,8 +98,14 @@ export default () => {
   }
   return (
     <>
-      <Search placeholder="搜索" style={{ width: 200 }} />
-      <Table columns={columns} dataSource={data} onChange={onChange} />
+      <Search placeholder='搜索' style={{ width: 200 }} />
+      <Table
+        columns={columns}
+        dataSource={data}
+        onChange={onChange}
+        size='small'
+        rowClassName='dc3-table-row'
+      />
     </>
   );
 };

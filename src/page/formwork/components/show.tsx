@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { showFormwork } from '../actions';
 
+import 'src/page/style/style.css';
+
 const { Column } = Table;
 
 export default () => {
@@ -58,18 +60,18 @@ export default () => {
     },
   ];
   return (
-    <Table dataSource={data}>
-      <Column title="#" dataIndex="index" key="index" />
-      <Column title="模板" dataIndex="name" key="name" />
-      <Column title="公/私有" dataIndex="isPrivate" key="isPrivate" />
-      <Column title="所属驱动" dataIndex="drive" key="drive" />
-      <Column title="创建日期" dataIndex="createTime" key="createTime" />
+    <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
+      <Column title='#' dataIndex='index' key='index' />
+      <Column title='模板' dataIndex='name' key='name' />
+      <Column title='公/私有' dataIndex='isPrivate' key='isPrivate' />
+      <Column title='所属驱动' dataIndex='drive' key='drive' />
+      <Column title='创建日期' dataIndex='createTime' key='createTime' />
       <Column
-        title="操作"
-        dataIndex=""
-        key=""
+        title='操作'
+        dataIndex=''
+        key=''
         render={() => (
-          <Space size="middle">
+          <Space size='middle'>
             <Typography.Link>
               <EditOutlined />
               编辑
