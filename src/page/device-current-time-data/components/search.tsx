@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Form, Button, Input, Select, Table } from 'antd';
+import { Form, Button, Input, Select, Table, Typography } from 'antd';
+import { EyeOutlined } from '@ant-design/icons';
+import Mock, { Random } from 'mockjs';
 
 import 'src/page/style/style.css';
 
@@ -9,52 +11,37 @@ const { Column } = Table;
 export default ({ setUrlState }: { setUrlState: Function }) => {
   const onFinish = () => {};
 
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      device: 'ModbusTcp-Device',
-      template: 'ModbusTcpProfile',
-      storageStyle: '单点数据',
-      state: '在线',
-      remarks: 'modbus设备-温度传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 2,
-      index: 2,
-      device: 'Mqtt-Device',
-      template: 'MqttProfile',
-      storageStyle: '单点数据',
-      state: '在线',
-      remarks: 'mqtt设备-湿度传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 3,
-      index: 3,
-      device: 'OpcUa-Device',
-      template: 'OpcUaProfile',
-      storageStyle: '结构数据',
-      state: '在线',
-      remarks: 'OpcUa设备-水浸传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 4,
-      index: 4,
-      device: 'OpcDa-Device',
-      template: 'OpcDaProfile',
-      storageStyle: '单点数据',
-      state: '在线',
-      remarks: 'OpcDa设备-空调传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|4': [
+      {
+        'index|+1': 1,
+        'device|+1': [
+          'ModbusTcp-Device',
+          'Mqtt-Device',
+          'OpcUa-Device',
+          'OpcDa-Device',
+        ],
+        'template|+1': [
+          'ModbusTcpProfile',
+          'MqttProfile',
+          'OpcUaProfile',
+          'OpcDaProfile',
+        ],
+        'storageStyle|1': ['单点数据', '结构数据'],
+        state: '在线',
+        'remarks|+1': [
+          'modbus设备-温度传感器',
+          'mqtt设备-湿度传感器',
+          'OpcUa设备-水浸传感器',
+          'OpcDa设备-空调传感器',
+        ],
+        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      },
+    ],
+  });
+
+  console.log(data);
 
   return (
     <>
@@ -62,8 +49,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 10 }}
         layout='horizontal'
-        onFinish={onFinish}
-      >
+        onFinish={onFinish}>
         <Form.Item label='设备名'>
           <Input placeholder='设备' />
         </Form.Item>
@@ -89,14 +75,24 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
               });
             },
           };
-        }}
-      >
+        }}>
         <Column title='#' dataIndex='index' key='index' />
         <Column title='设备' dataIndex='device' key='devce' />
         <Column title='所属模板' dataIndex='template' key='template' />
         <Column title='存储类型' dataIndex='storageStyle' key='storageStyle' />
         <Column title='状态' dataIndex='state' key='state' />
         <Column title='备注' dataIndex='remarks' key='remarks' />
+        <Column
+          title='操作'
+          dataIndex='operation'
+          key='operation'
+          render={() => (
+            <Typography.Link>
+              <EyeOutlined />
+              查看
+            </Typography.Link>
+          )}
+        />
       </Table>
     </>
   );

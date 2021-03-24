@@ -47,7 +47,7 @@ export default () => {
       <Column title='频率' dataIndex='frequency' key='frequency'></Column>
       <Column title='等级' dataIndex='level' key='level'></Column>
       <Column title='修改日期' dataIndex='updateTime' key='updateTime'></Column>
-      <Column title='创建日期' dataIndex='createTime' key='createTime'></Column>
+      <Column title='创建日期' dataIndex='createTime' key='createTime' />
       <Column
         title='操作'
         dataIndex='operation'
@@ -63,8 +63,7 @@ export default () => {
               删除
             </Typography.Link>
           </Space>
-        )}
-      ></Column>
+        )}></Column>
     </Table>
   );
 };
