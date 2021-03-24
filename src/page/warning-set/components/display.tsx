@@ -4,6 +4,8 @@ import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Column from 'antd/lib/table/Column';
 
+import 'src/page/style/style.css';
+
 export default () => {
   const data = [
     {
@@ -32,7 +34,7 @@ export default () => {
     },
   ];
   return (
-    <Table dataSource={data}>
+    <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index'></Column>
       <Column title='等级' dataIndex='level' key='level'></Column>
       <Column title='内容' dataIndex='content' key='content'></Column>
@@ -53,7 +55,8 @@ export default () => {
               删除
             </Typography.Link>
           </Space>
-        )}></Column>
+        )}
+      ></Column>
     </Table>
   );
 };
