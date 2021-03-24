@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { showTagconfig } from '../actions';
 
+import 'src/page/style/style.css';
+
 const { Column } = Table;
 
 export default () => {
@@ -107,7 +109,8 @@ export default () => {
     },
   ];
   return (
-    <Table dataSource={data}>
+    <Table dataSource={data} size='small'
+    rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
       <Column title='所属设备' dataIndex='dev' key='dev' />
       <Column title='所属位号' dataIndex='tagname' key='tagname' />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Table } from 'antd';
 
 import './style.css';
+import 'src/page/style/style.css';
 
 const columns = [
   {
@@ -188,6 +189,12 @@ export default () => {
     selections: [Table.SELECTION_ALL, Table.SELECTION_INVERT],
   };
   return (
-    <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+    <Table
+      rowSelection={rowSelection}
+      columns={columns}
+      dataSource={data}
+      size='small'
+      rowClassName='dc3-table-row'
+    />
   );
 };

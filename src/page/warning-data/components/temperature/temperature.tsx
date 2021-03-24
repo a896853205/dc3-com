@@ -7,15 +7,15 @@ import './style.css';
 export default () => {
   return (
     <>
-      <div className="outer-box">
-        <div className="inner-box1">
+      <div className='outer-box'>
+        <div className='inner-box1'>
           <Pie />
         </div>
-        <div className="inner-box2">
+        <div className='inner-box2'>
           <Bar />
         </div>
       </div>
-      <div className="inner-box3">
+      <div className='inner-box3'>
         <Table />
       </div>
     </>
