@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Space, Table, Typography, Tag, Row } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import Mock, { Random } from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showUser } from '../actions';
@@ -24,40 +25,31 @@ export default () => {
     }
   }, [refresh, dispatch]);
 
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      name: 'Sage',
-      email: '123456@qq.com',
-      tel: '8888888',
-      tags: ['设备接入', '设备数据管理', '状态监控'],
-    },
-    {
-      key: 2,
-      index: 2,
-      name: 'Sage',
-      email: '123456@qq.com',
-      tel: '8888888',
-      tags: ['设备接入', '告警管理', '用户管理'],
-    },
-    {
-      key: 3,
-      index: 3,
-      name: 'Sage',
-      email: '123456@qq.com',
-      tel: '8888888',
-      tags: ['设备接入', '状态监控'],
-    },
-    {
-      key: 4,
-      index: 4,
-      name: 'Sage',
-      email: '123456@qq.com',
-      tel: '8888888',
-      tags: ['设备接入'],
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|5': [
+      {
+        'key|+1': 1,
+        'index|+1': 1,
+        'name|+1': ['Sage', 'zhangsan', 'lisi', 'wangwu'],
+        'email|+1': [
+          '1914567567',
+          '12134537@qq.com',
+          '6786873490r',
+          '654634123@qq.com',
+        ],
+        'tel|+1': ['1914567567', '6512134537', '6786873490', '54654634123'],
+        'tags|+1': [
+          ['设备接入', '设备数据管理', '状态监控'],
+          ['设备接入', '告警管理', '用户管理'],
+          ['设备接入', '状态监控'],
+          ['设备接入'],
+        ],
+      },
+    ],
+  });
+
+  console.log(data);
+
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />

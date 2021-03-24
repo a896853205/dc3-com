@@ -23,11 +23,13 @@ export default () => {
         onOk={onFinish}
         onCancel={setFalse}
         cancelText='取消'
-        okText='确定'>
+        okText='确定'
+      >
         <Form
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 20 }}
-          layout='horizontal'>
+          layout='horizontal'
+        >
           <Form.Item label='等级'>
             <Select>
               <Option value='one'>一级</Option>
@@ -45,12 +47,6 @@ export default () => {
               <Option value='four-level'>温度过高</Option>
               <Option value='five-level'>通信状态：断线报警</Option>
             </Select>
-          </Form.Item>
-          <Form.Item label='修改日期' required>
-            <DatePicker />
-          </Form.Item>
-          <Form.Item label='创建日期' required>
-            <DatePicker />
           </Form.Item>
         </Form>
       </Modal>

@@ -3,42 +3,32 @@ import React from 'react';
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Column from 'antd/lib/table/Column';
+import Mock, { Random } from 'mockjs';
 
 import 'src/page/style/style.css';
 
 export default () => {
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      method: '手机',
-      content: '1914567567',
-      frequency: '30分钟',
-      level: '一级',
-      updateTime: '2021-3-21 23:00:00',
-      createTime: '2021-3-21 23:00:00',
-    },
-    {
-      key: 2,
-      index: 2,
-      method: '邮箱',
-      content: '12134537@qq.com',
-      frequency: '1小时',
-      level: '三级',
-      updateTime: '2021-3-21 23:00:00',
-      createTime: '2021-3-21 23:00:00',
-    },
-    {
-      key: 3,
-      index: 3,
-      method: '手机',
-      content: '1813237567',
-      frequency: '10分钟',
-      level: '二级',
-      updateTime: '2021-3-21 23:00:00',
-      createTime: '2021-3-21 23:00:00',
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|4': [
+      {
+        'index|+1': 1,
+        'method|+1': ['手机', '邮箱'],
+        'content|+1': [
+          '1914567567',
+          '12134537@qq.com',
+          '6786873490r',
+          '654634123@qq.com',
+        ],
+        'frequency|+1': ['30分钟', '1小时', '10分钟', '20分钟'],
+        'level|+1': ['一级', '二级', '三级', '四级', '五级'],
+        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      },
+    ],
+  });
+
+  console.log(data);
+
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
@@ -62,7 +52,8 @@ export default () => {
               删除
             </Typography.Link>
           </Space>
-        )}></Column>
+        )}
+      ></Column>
     </Table>
   );
 };

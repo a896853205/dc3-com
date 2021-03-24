@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import Mock, { Random } from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showFormwork } from '../actions';
@@ -25,40 +26,30 @@ export default () => {
     }
   }, [refresh, dispatch]);
 
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      name: 'ModbusTcpProfile',
-      isPrivate: '私有',
-      drive: 'ModbusDriver', // 驱动
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 2,
-      index: 2,
-      name: 'MqttProfile',
-      isPrivate: '私有',
-      drive: 'MqttDriver',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 3,
-      index: 3,
-      name: 'OpcDaProfile',
-      isPrivate: '私有',
-      drive: 'OpcDaDriver',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 4,
-      index: 4,
-      name: 'OpcUaProfile',
-      isPrivate: '私有',
-      drive: 'OpcUaDriver',
-      createTime: '2014-12-24 23:12:00',
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|4': [
+      {
+        'index|+1': 1,
+        'name|+1': [
+          'ModbusTcpProfile',
+          'MqttProfile',
+          'OpcUaProfile',
+          'OpcDaProfile',
+        ],
+        'isPrivate|1': ['私有', '公有'],
+        'drive|+1': [
+          'ModbusDriver',
+          'MqttDriver',
+          'OpcDaDriver',
+          'OpcUaDriver',
+        ],
+        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      },
+    ],
+  });
+
+  console.log(data);
+
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />

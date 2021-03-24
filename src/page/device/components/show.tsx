@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
+import Mock, { Random } from 'mockjs';
 
 import { showDevice } from '../actions';
 import Column from 'antd/lib/table/Column';
@@ -22,52 +23,38 @@ export default () => {
     }
   }, [refresh, dispatch]);
 
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      device: 'ModbusTcp-Device',
-      template: 'ModbusTcpProfile',
-      storageStyle: '单点数据',
-      state: '在线',
-      remarks: 'modbus设备-温度传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 2,
-      index: 2,
-      device: 'Mqtt-Device',
-      template: 'MqttProfile',
-      storageStyle: '单点数据',
-      state: '在线',
-      remarks: 'mqtt设备-湿度传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 3,
-      index: 3,
-      device: 'OpcUa-Device',
-      template: 'OpcUaProfile',
-      storageStyle: '结构数据',
-      state: '在线',
-      remarks: 'OpcUa设备-水浸传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 4,
-      index: 4,
-      device: 'OpcDa-Device',
-      template: 'OpcDaProfile',
-      storageStyle: '单点数据',
-      state: '在线',
-      remarks: 'OpcDa设备-空调传感器',
-      updateTime: '2014-12-25 23:00:00',
-      createTime: '2014-12-24 23:12:00',
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|4': [
+      {
+        'index|+1': 1,
+        'device|+1': [
+          'ModbusTcp-Device',
+          'Mqtt-Device',
+          'OpcUa-Device',
+          'OpcDa-Device',
+        ],
+        'template|+1': [
+          'ModbusTcpProfile',
+          'MqttProfile',
+          'OpcUaProfile',
+          'OpcDaProfile',
+        ],
+        'storageStyle|1': ['单点数据', '结构数据'],
+        state: '在线',
+        'remarks|+1': [
+          'modbus设备-温度传感器',
+          'mqtt设备-湿度传感器',
+          'OpcUa设备-水浸传感器',
+          'OpcDa设备-空调传感器',
+        ],
+        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      },
+    ],
+  });
+
+  console.log(data);
+
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />

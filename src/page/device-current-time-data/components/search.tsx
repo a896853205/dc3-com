@@ -6,8 +6,6 @@ import Mock, { Random } from 'mockjs';
 
 import 'src/page/style/style.css';
 
-import 'src/page/style/style.css';
-
 const { Column } = Table;
 
 export default ({ setUrlState }: { setUrlState: Function }) => {
