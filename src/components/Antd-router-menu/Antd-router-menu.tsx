@@ -14,11 +14,11 @@ export default memo((props: Props) => {
   const { menuData } = props;
 
   return (
-    <Menu theme='light' mode='inline'>
+    <Menu theme="light" mode="inline">
       {menuData.map(menuDataItem => {
         if (menuDataItem instanceof MenuItem) {
           return (
-            <Menu.Item key={uuid()}>
+            <Menu.Item key={uuid()} icon={menuDataItem.icon}>
               <Link to={menuDataItem.url}>
                 <span>{menuDataItem.name}</span>
               </Link>
@@ -26,7 +26,11 @@ export default memo((props: Props) => {
           );
         } else if (menuDataItem instanceof MenuItemGroup) {
           return (
-            <SubMenu key={uuid()} title={menuDataItem.title}>
+            <SubMenu
+              key={uuid()}
+              title={menuDataItem.title}
+              icon={menuDataItem.icon}
+            >
               {menuDataItem.children.map(menuSubItem => {
                 return (
                   <Menu.Item key={uuid()}>

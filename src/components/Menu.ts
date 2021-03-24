@@ -4,9 +4,9 @@
 export class MenuItem {
   url = '';
   name = '';
-  icon? = '';
+  icon?: React.ReactNode;
 
-  constructor(url: string, name: string, icon: string = '') {
+  constructor(url: string, name: string, icon?: React.ReactNode) {
     this.url = url;
     this.name = name;
     this.icon = icon;
@@ -19,11 +19,13 @@ export class MenuItem {
 export class MenuItemGroup {
   title: string = '';
   children: MenuItem[] = [];
+  icon?: React.ReactNode;
 
-  constructor(title: string, children: MenuItem[]) {
+  constructor(title: string, children: MenuItem[], icon?: React.ReactNode) {
     this.title = title;
     this.children = children.map(
       child => new MenuItem(child.url, child.name, child.icon)
     );
+    this.icon = icon;
   }
 }
