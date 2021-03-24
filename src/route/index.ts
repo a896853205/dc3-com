@@ -1,6 +1,7 @@
 import { RouteConfig } from 'react-router-config';
 
 import Home from 'src/outter-page/home';
+import Login from 'src/outter-page/login';
 import Capsule from 'src/page/capsule';
 import Formwork from 'src/page/formwork';
 import DriverConfiguration from 'src/page/driver-configuration';
@@ -17,7 +18,7 @@ import UserList from 'src/page/user-list';
 
 const config: RouteConfig[] = [
   {
-    path: '/',
+    path: '/home',
     component: Home,
     routes: [
       {
@@ -86,6 +87,11 @@ const config: RouteConfig[] = [
         exact: true,
       },
     ],
+  },
+  {
+    path: '/',
+    component: Login,
+    exact: true,
   },
 ];
 
