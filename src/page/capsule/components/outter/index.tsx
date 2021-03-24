@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BarChart from '../bar-chart';
-import TMap from '../map';
+import StepLine from '../step-line/index';
 import PieChart from 'src/page/capsule/components/warning/pie-chart';
 import LineChart from 'src/page/capsule/components/warning/line-chart/index';
 import List from 'src/page/capsule/components/warning/list';
@@ -39,7 +39,7 @@ export default () => (
         <BarChart />
       </div>
       <div className='item-box'>
-        <TMap />
+        <StepLine />
       </div>
     </div>
     <div className='col3 item-box'>
