@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Space, Table, Typography, Tag, Row } from 'antd';
+import { Space, Table, Typography, Tag } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
