@@ -2,6 +2,14 @@ import React, { Suspense } from 'react';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 
 import { Layout } from 'antd';
+import {
+  ApiOutlined,
+  BellOutlined,
+  CopyOutlined,
+  HomeOutlined,
+  LineChartOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
 import './style.css';
 import 'antd/dist/antd.css';
@@ -15,29 +23,44 @@ const { Content, Footer, Sider } = Layout;
  * 配置导航栏链接和文字
  */
 const MENU_DATA = [
-  new MenuItem('/timeline', '首页'),
-  new MenuItemGroup('设备接入', [
-    new MenuItem('/formwork', '模板'),
-    new MenuItem('/tagname', '位号'),
-    new MenuItem('/tagconfig', '位号配置'),
-    new MenuItem('/driverConfiguration', '驱动配置'),
-    new MenuItem('/device', '设备'),
-  ]),
-  new MenuItemGroup('告警管理', [
-    new MenuItem('/warningData', '告警数据管理'),
-    new MenuItem('/warningSet', '告警方式设置'),
-  ]),
-  new MenuItemGroup('设备数据管理', [
-    new MenuItem('/deviceParamConfig', '采集参数设置'),
-    new MenuItem('/deviceCurrentTimeData', '实时数据查看'),
-    new MenuItem('/deviceHistoryData', '历史数据管理'),
-  ]),
-  new MenuItem('/userList', '用户管理'),
-  new MenuItemGroup('状态监控', [
-    new MenuItem('/capsule', '设备状态监控'),
-    new MenuItem('/microService', '平台状态监控'),
-  ]),
-  new MenuItem('/userList', '用户管理'),
+  new MenuItem('/timeline', '首页', <HomeOutlined />),
+  new MenuItemGroup(
+    '设备接入',
+    [
+      new MenuItem('/formwork', '模板'),
+      new MenuItem('/tagname', '位号'),
+      new MenuItem('/tagconfig', '位号配置'),
+      new MenuItem('/driverConfiguration', '驱动配置'),
+      new MenuItem('/device', '设备'),
+    ],
+    <ApiOutlined />
+  ),
+  new MenuItemGroup(
+    '告警管理',
+    [
+      new MenuItem('/warningData', '告警数据管理'),
+      new MenuItem('/warningSet', '告警方式设置'),
+    ],
+    <BellOutlined />
+  ),
+  new MenuItemGroup(
+    '设备数据管理',
+    [
+      new MenuItem('/deviceParamConfig', '采集参数设置'),
+      new MenuItem('/deviceCurrentTimeData', '实时数据查看'),
+      new MenuItem('/deviceHistoryData', '历史数据管理'),
+    ],
+    <CopyOutlined />
+  ),
+  new MenuItemGroup(
+    '状态监控',
+    [
+      new MenuItem('/capsule', '设备状态监控'),
+      new MenuItem('/microService', '平台状态监控'),
+    ],
+    <LineChartOutlined />
+  ),
+  new MenuItem('/userList', '用户管理', <UserOutlined />),
 ];
 
 export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
