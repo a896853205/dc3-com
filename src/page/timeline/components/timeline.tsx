@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Timeline } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
+import Breadcrumb from 'src/components/Breadcrumb/Breadcrumb';
 
 import Content from './content';
 
@@ -15,21 +16,22 @@ export default () => {
   ];
   return (
     <>
+      <Breadcrumb />
       <Timeline>
         <Timeline.Item dot={<ClockCircleOutlined />}>
-          <Content title="设备接入" description={description[0]} />
+          <Content title='设备接入' description={description[0]} />
         </Timeline.Item>
         <Timeline.Item dot={<ClockCircleOutlined />}>
-          <Content title="设备数据管理" description={description[1]} />
+          <Content title='设备数据管理' description={description[1]} />
         </Timeline.Item>
         <Timeline.Item dot={<ClockCircleOutlined />}>
-          <Content title="状态监控" description={description[2]} />
+          <Content title='状态监控' description={description[2]} />
         </Timeline.Item>
         <Timeline.Item dot={<ClockCircleOutlined />}>
-          <Content title="告警管理" description={description[3]} />
+          <Content title='告警管理' description={description[3]} />
         </Timeline.Item>
         <Timeline.Item dot={<ClockCircleOutlined />}>
-          <Content title="用户管理" description={description[4]} />
+          <Content title='用户管理' description={description[4]} />
         </Timeline.Item>
       </Timeline>
     </>

@@ -6,6 +6,8 @@ import Mock, { Random } from 'mockjs';
 
 import 'src/page/style/style.css';
 
+import 'src/page/style/style.css';
+
 const { Column } = Table;
 
 export default ({ setUrlState }: { setUrlState: Function }) => {
@@ -49,7 +51,8 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 10 }}
         layout='horizontal'
-        onFinish={onFinish}>
+        onFinish={onFinish}
+      >
         <Form.Item label='设备名'>
           <Input placeholder='设备' />
         </Form.Item>
@@ -75,7 +78,8 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
               });
             },
           };
-        }}>
+        }}
+      >
         <Column title='#' dataIndex='index' key='index' />
         <Column title='设备' dataIndex='device' key='devce' />
         <Column title='所属模板' dataIndex='template' key='template' />
