@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { Menu } from 'antd';
 import { v1 as uuid } from 'uuid';
@@ -10,9 +10,8 @@ export interface Props {
   menuData: (MenuItem | MenuItemGroup)[];
 }
 
-export default (props: Props) => {
+export default memo((props: Props) => {
   const { menuData } = props;
-  // FIXME：解决导航栏显示问题
 
   return (
     <Menu theme='light' mode='inline'>
@@ -45,4 +44,4 @@ export default (props: Props) => {
       })}
     </Menu>
   );
-};
+});
