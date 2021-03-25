@@ -22,67 +22,67 @@ const config: RouteConfig[] = [
     component: Home,
     routes: [
       {
-        path: '/capsule',
+        path: '/home/capsule',
         component: Capsule,
         exact: true,
       },
       {
-        path: '/formwork',
+        path: '/home/formwork',
         component: Formwork,
         exact: true,
       },
       {
-        path: '/tagname',
+        path: '/home/tagname',
         component: Tagname,
         exact: true,
       },
       {
-        path: '/tagconfig',
+        path: '/home/tagconfig',
         component: TagConfig,
         exact: true,
       },
       {
-        path: '/driverConfiguration',
+        path: '/home/driverConfiguration',
         component: DriverConfiguration,
         exact: true,
       },
 
       {
-        path: '/device',
+        path: '/home/device',
         component: Device,
         exact: true,
       },
       {
-        path: '/microService',
+        path: '/home/microService',
         component: MicroService,
       },
       {
-        path: '/timeline',
+        path: '/home/timeline',
         component: Timeline,
         exact: true,
       },
       {
-        path: '/deviceCurrentTimeData',
+        path: '/home/deviceCurrentTimeData',
         component: DeviceCurrentTimeData,
         exact: true,
       },
       {
-        path: '/deviceHistoryData',
+        path: '/home/deviceHistoryData',
         component: DeviceHistoryData,
         exact: true,
       },
       {
-        path: '/warningData',
+        path: '/home/warningData',
         component: WarningData,
         exact: true,
       },
       {
-        path: '/warningSet',
+        path: '/home/warningSet',
         component: WarningSet,
         exact: true,
       },
       {
-        path: '/userList',
+        path: '/home/userList',
         component: UserList,
         exact: true,
       },

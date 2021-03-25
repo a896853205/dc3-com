@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Input } from 'antd';
+import Mock, { Random } from 'mockjs';
 
 import 'src/page/style/style.css';
 
@@ -23,74 +24,41 @@ const columns = [
   },
   {
     title: '时间',
-    dataIndex: 'starttime',
+    dataIndex: 'startTime',
   },
   {
     title: '是否恢复',
-    dataIndex: 'boolean',
+    dataIndex: 'state',
   },
   {
     title: '恢复时间',
-    dataIndex: 'endtime',
+    dataIndex: 'endTime',
   },
 ];
-
-const data = [
-  {
-    key: '1',
-    number: '1',
-    device: '温湿度传感器-1',
-    content: '1号温湿度 通信状态：断线报警',
-    starttime: '2021-3-22',
-    boolean: '是',
-    endtime: '2021-3-22',
-  },
-  {
-    key: '1',
-    number: '2',
-    device: '温湿度传感器-2',
-    content: '2号温湿度 湿度过低报警',
-    starttime: '2021-3-22',
-    boolean: '是',
-    endtime: '2021-3-22',
-  },
-  {
-    key: '1',
-    number: '3',
-    device: '温湿度传感器-3',
-    content: '3号温湿度 温度过高报警',
-    starttime: '2021-3-22',
-    boolean: '是',
-    endtime: '2021-3-22',
-  },
-  {
-    key: '1',
-    number: '4',
-    device: '温湿度传感器-4',
-    content: '4号温湿度 温度过高报警',
-    starttime: '2021-3-22',
-    boolean: '是',
-    endtime: '2021-3-22',
-  },
-  {
-    key: '1',
-    number: '5',
-    device: '温湿度传感器-5',
-    content: '5号温湿度 湿度过低报警',
-    starttime: '2021-3-22',
-    boolean: '是',
-    endtime: '2021-3-22',
-  },
-  {
-    key: '1',
-    number: '6',
-    device: '温湿度传感器-6',
-    content: '6号温湿度 通信状态：断线报警',
-    starttime: '2021-3-22',
-    boolean: '是',
-    endtime: '2021-3-22',
-  },
-];
+const { data } = Mock.mock({
+  'data|4': [
+    {
+      'number|+1': 1,
+      'device|+1': [
+        '温湿度传感器-1',
+        '温湿度传感器-2',
+        '温湿度传感器-3',
+        '温湿度传感器-4',
+        '温湿度传感器-5',
+      ],
+      'content|+1': [
+        '湿度过低',
+        '湿度显示异常',
+        '温度显示异常',
+        '温度过高',
+        '温度远超正常值',
+      ],
+      startTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      state: '是',
+      endTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+    },
+  ],
+});
 
 export default () => {
   function onChange(pagination: any, filters: any, sorter: any, extra: any) {

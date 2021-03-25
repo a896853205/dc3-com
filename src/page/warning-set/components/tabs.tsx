@@ -5,9 +5,7 @@ import Breadcrumb from 'src/components/Breadcrumb/Breadcrumb';
 
 const { TabPane } = Tabs;
 
-function callback(key: any) {
-  console.log(key);
-}
+function callback() {}
 export default () => (
   <>
     <Breadcrumb />

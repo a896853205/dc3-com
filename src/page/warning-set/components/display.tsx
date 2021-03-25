@@ -3,36 +3,29 @@ import React from 'react';
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Column from 'antd/lib/table/Column';
+import Mock, { Random } from 'mockjs';
 
 import 'src/page/style/style.css';
 
 export default () => {
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      level: '一级',
-      content: '湿度过低',
-      updateTime: '2021-3-21 23:00:00',
-      createTime: '2021-3-21 23:00:00',
-    },
-    {
-      key: 2,
-      index: 2,
-      level: '二级',
-      content: '湿度显示异常',
-      updateTime: '2021-3-21 23:00:00',
-      createTime: '2021-3-21 23:00:00',
-    },
-    {
-      key: 3,
-      index: 3,
-      level: '三级',
-      content: '温度显示异常',
-      updateTime: '2021-3-21 23:00:00',
-      createTime: '2021-3-21 23:00:00',
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|4': [
+      {
+        'index|+1': 1,
+        'level|+1': ['一级', '二级', '三级', '四级', '五级'],
+        'content|+1': [
+          '湿度过低',
+          '湿度显示异常',
+          '温度显示异常',
+          '温度过高',
+          '温度远超正常值',
+        ],
+        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      },
+    ],
+  });
+
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
@@ -55,7 +48,8 @@ export default () => {
               删除
             </Typography.Link>
           </Space>
-        )}></Column>
+        )}
+      ></Column>
     </Table>
   );
 };
