@@ -31,9 +31,9 @@ const MENU_DATA = [
     [
       new MenuItem('/home/formwork', '模板'),
       new MenuItem('/home/tagname', '位号'),
-      new MenuItem('/home/tagconfig', '位号配置'),
       new MenuItem('/home/driverConfiguration', '驱动配置'),
       new MenuItem('/home/device', '设备'),
+      new MenuItem('/home/tagconfig', '位号配置'),
     ],
     <ApiOutlined />
   ),
