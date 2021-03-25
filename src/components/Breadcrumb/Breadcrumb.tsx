@@ -29,6 +29,7 @@ const useBreadcrumbListByUrl = (
         // 遍历其中循环判断
         for (let menuSubItem of menuItem.children) {
           if (menuSubItem.url === location.pathname) {
+            nameList.push(menuItem.title);
             nameList.push(menuSubItem.name);
           }
         }
