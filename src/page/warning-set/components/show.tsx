@@ -3,29 +3,25 @@ import React from 'react';
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Column from 'antd/lib/table/Column';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 
 import 'src/page/style/style.css';
 
 export default () => {
   const { data } = Mock.mock({
-    'data|4': [
+    'data|100': [
       {
         'index|+1': 1,
         'method|+1': ['手机', '邮箱'],
-        'content|+1': [
-          '1914567567',
-          '12134537@qq.com',
-          '6786873490r',
-          '654634123@qq.com',
-        ],
-        'frequency|+1': ['30分钟', '1小时', '10分钟', '20分钟'],
-        'level|+1': ['一级', '二级', '三级', '四级', '五级'],
-        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        'content|+1': ['153@natural(10000000,19999999)', '@email'],
+        'frequency|+1': ['@natural(10,30)分钟', '@natural(1,2)小时'],
+        'level|+1': '@natural(1,5)级',
+        updateTime: '@date("yyyy-MM-dd HH:mm:ss")',
+        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
     ],
   });
+
 
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
@@ -50,8 +46,7 @@ export default () => {
               删除
             </Typography.Link>
           </Space>
-        )}
-      ></Column>
+        )}></Column>
     </Table>
   );
 };

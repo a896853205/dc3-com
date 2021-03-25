@@ -52,7 +52,7 @@ const columns = [
 ];
 
 const { data } = Mock.mock({
-  'data|15': [
+  'data|120': [
     {
       'key|+1': 1,
       'name|+1': [

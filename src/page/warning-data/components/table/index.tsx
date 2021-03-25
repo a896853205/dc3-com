@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Input } from 'antd';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 
 import 'src/page/style/style.css';
 
@@ -36,7 +36,7 @@ const columns = [
   },
 ];
 const { data } = Mock.mock({
-  'data|4': [
+  'data|100': [
     {
       'number|+1': 1,
       'device|+1': [
@@ -53,9 +53,9 @@ const { data } = Mock.mock({
         '温度过高',
         '温度远超正常值',
       ],
-      startTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      startTime: '@date("yyyy-MM-dd HH:mm:ss")',
       state: '是',
-      endTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      endTime: '@date("yyyy-MM-dd HH:mm:ss")',
     },
   ],
 });

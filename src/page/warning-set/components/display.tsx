@@ -3,16 +3,16 @@ import React from 'react';
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Column from 'antd/lib/table/Column';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 
 import 'src/page/style/style.css';
 
 export default () => {
   const { data } = Mock.mock({
-    'data|4': [
+    'data|100': [
       {
         'index|+1': 1,
-        'level|+1': ['一级', '二级', '三级', '四级', '五级'],
+        'level|+1': ['1级', '2级', '3级', '4级', '5级'],
         'content|+1': [
           '湿度过低',
           '湿度显示异常',
@@ -20,8 +20,8 @@ export default () => {
           '温度过高',
           '温度远超正常值',
         ],
-        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        updateTime: '@date("yyyy-MM-dd HH:mm:ss")',
+        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
     ],
   });
