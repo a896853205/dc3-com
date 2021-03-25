@@ -10,14 +10,16 @@ import {
   LineChartOutlined,
   UserOutlined,
 } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 
 import './style.css';
 import 'antd/dist/antd.css';
 import AntdRouterMenu from '../../components/Antd-router-menu/Antd-router-menu';
+import UserHeader from './components/user-header';
 import { MenuItem, MenuItemGroup } from '../../components/Menu';
 import PageLoading from '../../components/page-loading';
 
-const { Content, Footer, Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 
 /**
  * 配置导航栏链接和文字
@@ -68,20 +70,46 @@ export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
 );
 
 export default ({ route }: RouteConfigComponentProps) => {
+  const history = useHistory();
+  const handleClick = () => {
+    history.push('/home/timeline');
+  };
   return (
     <MenuContext.Provider value={MENU_DATA}>
       <Layout>
-        <Sider theme='light' className='home-sider'>
-          <AntdRouterMenu menuData={MENU_DATA} />
-        </Sider>
-        <div className='home-content-box'>
-          <Suspense fallback={<PageLoading />}>
-            <Content className='home-content'>
-              {renderRoutes(route?.routes)}
-            </Content>
-          </Suspense>
-          <Footer>code@Eric design@Luna</Footer>
-        </div>
+        <Header
+          style={{
+            justifyContent: 'space-between',
+            display: 'flex',
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: 'fantasy',
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: '#fafafa',
+              cursor: 'pointer',
+            }}
+            onClick={handleClick}
+          >
+            动环监控平台
+          </h1>
+          <UserHeader />
+        </Header>
+        <Layout>
+          <Sider theme='light' className='home-sider'>
+            <AntdRouterMenu menuData={MENU_DATA} />
+          </Sider>
+          <div className='home-content-box'>
+            <Suspense fallback={<PageLoading />}>
+              <Content className='home-content'>
+                {renderRoutes(route?.routes)}
+              </Content>
+            </Suspense>
+            <Footer>code@Eric design@Luna</Footer>
+          </div>
+        </Layout>
       </Layout>
     </MenuContext.Provider>
   );
