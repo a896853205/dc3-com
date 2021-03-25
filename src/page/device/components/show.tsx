@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 
 import { showDevice } from '../actions';
 import Column from 'antd/lib/table/Column';
@@ -24,7 +24,7 @@ export default () => {
   }, [refresh, dispatch]);
 
   const { data } = Mock.mock({
-    'data|4': [
+    'data|100': [
       {
         'index|+1': 1,
         'device|+1': [
@@ -47,8 +47,8 @@ export default () => {
           'OpcUa设备-水浸传感器',
           'OpcDa设备-空调传感器',
         ],
-        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        updateTime: '@date("yyyy-MM-dd HH:mm:ss")',
+        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
     ],
   });

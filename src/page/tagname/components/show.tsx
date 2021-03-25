@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Table, Space, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showTagname } from '../actions';
@@ -27,7 +27,7 @@ export default () => {
   }, [refresh, dispatch]);
 
   const { data } = Mock.mock({
-    'data|4': [
+    'data|100': [
       {
         'index|+1': 1,
         'name|+1': [
@@ -36,14 +36,13 @@ export default () => {
           'OpcUaProfile',
           'OpcDaProfile',
         ],
-        'tagname|+1': ['tag--int', 'tag-int', 'tag-string', 'tag-string'],
+        'tagname|+1': ['tag-int', 'tag-int', 'tag-string', 'tag-string'],
         'type|+1': ['Integer', 'Integer', 'String', 'String'],
-        'storageStyle|1': ['单点数据', '结构数据'],
         isWrite: '只读',
         sumTag: '不累计',
         multiple: 1,
         format: '%.3f',
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
     ],
   });
