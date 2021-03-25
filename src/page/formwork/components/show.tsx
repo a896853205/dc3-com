@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Space, Table, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showFormwork } from '../actions';
@@ -27,7 +27,7 @@ export default () => {
   }, [refresh, dispatch]);
 
   const { data } = Mock.mock({
-    'data|4': [
+    'data|100': [
       {
         'index|+1': 1,
         'name|+1': [
@@ -43,7 +43,7 @@ export default () => {
           'OpcDaDriver',
           'OpcUaDriver',
         ],
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
     ],
   });

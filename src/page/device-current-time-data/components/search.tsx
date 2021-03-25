@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Form, Button, Input, Select, Table, Typography } from 'antd';
 import { EyeOutlined } from '@ant-design/icons';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 
 import 'src/page/style/style.css';
 
@@ -12,7 +12,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
   const onFinish = () => {};
 
   const { data } = Mock.mock({
-    'data|4': [
+    'data|100': [
       {
         'index|+1': 1,
         'device|+1': [
@@ -35,8 +35,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           'OpcUa设备-水浸传感器',
           'OpcDa设备-空调传感器',
         ],
-        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
       },
     ],
   });
