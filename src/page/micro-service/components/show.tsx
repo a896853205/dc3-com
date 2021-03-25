@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Table } from 'antd';
+import Mock from 'mockjs';
 
 import './style.css';
 import 'src/page/style/style.css';
@@ -50,130 +51,61 @@ const columns = [
   },
 ];
 
-const data: any = [];
-data.push(
-  {
-    key: 1,
-    name: `rook-ceph-osd-prepare-k8s-n`,
-    namespace: 'rook-ceph',
-    containers: '■☐',
-    restarts: 0,
-    controlled: 'Job',
-    qos: 'BestEffort',
-    age: '1d',
-    status: 'Completed',
-  },
-  {
-    key: 2,
-    name: 'rook-ceph-tools-f56f69476-w',
-    namespace: 'rook-ceph',
-    containers: '■',
-    restarts: 0,
-    controlled: 'ReplicaSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 3,
-    name: 'rook-dicover-crdtq',
-    namespace: 'rook-ceph',
-    containers: '■',
-    restarts: 0,
-    controlled: 'DaemonSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 4,
-    name: 'rook-discover-gnz45',
-    namespace: 'rook-ceph',
-    containers: '■',
-    restarts: 0,
-    controlled: 'DaemonSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 5,
-    name: 'rook-discover-kqpbc',
-    namespace: 'rook-ceph',
-    containers: '■',
-    restarts: 13,
-    controlled: 'DaemonSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 6,
-    name: 'web-front',
-    namespace: 'default',
-    containers: '■',
-    restarts: 0,
-    controlled: '',
-    qos: 'BestEffort',
-    age: '13d',
-    status: 'Running',
-  },
-  {
-    key: 7,
-    name: 'web-front02',
-    namespace: 'default',
-    containers: '■',
-    restarts: 0,
-    controlled: '',
-    qos: 'BestEffort',
-    age: '13d',
-    status: 'Running',
-  },
-  {
-    key: 8,
-    name: 'rook-ceph-mon-a-7b4d67ff88',
-    namespace: 'rook-ceph',
-    containers: '■☐☐',
-    restarts: 0,
-    controlled: 'ReplicaSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 9,
-    name: 'rook-ceph-mon-b-5b4d67ff88',
-    namespace: 'rook-ceph',
-    containers: '■☐☐',
-    restarts: 0,
-    controlled: 'ReplicaSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 10,
-    name: 'rook-ceph-mon-b-654d67ff88',
-    namespace: 'rook-ceph',
-    containers: '■☐☐',
-    restarts: 0,
-    controlled: 'ReplicaSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  },
-  {
-    key: 11,
-    name: 'rook-ceph-mon-d-0b4c67ff88',
-    namespace: 'rook-ceph',
-    containers: '■☐☐',
-    restarts: 0,
-    controlled: 'ReplicaSet',
-    qos: 'BestEffort',
-    age: '30d',
-    status: 'Running',
-  }
-);
+const { data } = Mock.mock({
+  'data|15': [
+    {
+      'key|+1': 1,
+      'name|+1': [
+        'rook-ceph-osd-prepare-k8s-n',
+        'rook-ceph-tools-f56f69476-w',
+        'rook-dicover-crdtq',
+        'rook-discover-gnz45',
+        'rook-discover-kqpbc',
+        'web-front',
+        'web-front02',
+        'rook-ceph-mon-a-7b4d67ff88',
+        'rook-ceph-mon-b-5b4d67ff88',
+        'rook-ceph-mon-b-654d67ff88',
+        'rook-ceph-mon-d-0b4c67ff88',
+      ],
+      'namespace|+1': [
+        'rook-ceph',
+        'rook-ceph',
+        'rook-ceph',
+        'default',
+        'default',
+        'rook-ceph',
+        'rook-ceph',
+      ],
+      'containers|+1': ['■☐', '■', '■', '■', '■', '■', '■☐☐', '■☐☐', '■☐☐'],
+      'restarts|1-13': 13,
+      'controlled|+1': [
+        'Job',
+        'ReplicaSet',
+        'DaemonSet',
+        'DaemonSet',
+        '',
+        '',
+        '',
+        'ReplicaSet',
+        'ReplicaSet',
+      ],
+      'qos|+1': ['BestEffort'],
+      'age|+1': ['1d', '30d', '30d', '30d', '30d', '30d', '30d', '30d'],
+      'status|+1': [
+        'Completed',
+        'Completed',
+        'running',
+        'running',
+        'running',
+        'running',
+        'running',
+      ],
+    },
+  ],
+});
+
+data.push({ data });
 
 export default () => {
   const [selectedRowKeys, setselectedRowKeys] = useState();

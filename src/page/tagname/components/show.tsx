@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Table, Space, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import Mock, { Random } from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showTagname } from '../actions';
@@ -25,56 +26,30 @@ export default () => {
     }
   }, [refresh, dispatch]);
 
-  const data = [
-    {
-      key: 1,
-      index: 1,
-      name: 'ModbusTcpProfile',
-      tagname: 'tag-int',
-      type: 'Integer',
-      isWrite: '只读',
-      sumTag: '不累计',
-      multiple: 1,
-      format: '%.3f',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 2,
-      index: 2,
-      name: 'MqttProfile',
-      tagname: 'tag-int',
-      type: 'Integer',
-      isWrite: '只读',
-      sumTag: '不累计',
-      multiple: 1,
-      format: '%.3f',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 3,
-      index: 3,
-      name: 'OpcUaProfile',
-      tagname: 'tag-string',
-      type: 'String',
-      isWrite: '只读',
-      sumTag: '不累计',
-      multiple: 1,
-      format: '%.3f',
-      createTime: '2014-12-24 23:12:00',
-    },
-    {
-      key: 4,
-      index: 4,
-      name: 'OpcDaProfile',
-      tagname: 'tag-string',
-      type: 'String',
-      isWrite: '只读',
-      sumTag: '不累计',
-      multiple: 1,
-      format: '%.3f',
-      createTime: '2014-12-24 23:12:00',
-    },
-  ];
+  const { data } = Mock.mock({
+    'data|4': [
+      {
+        'index|+1': 1,
+        'name|+1': [
+          'ModbusTcpProfile',
+          'MqttProfile',
+          'OpcUaProfile',
+          'OpcDaProfile',
+        ],
+        'tagname|+1': ['tag--int', 'tag-int', 'tag-string', 'tag-string'],
+        'type|+1': ['Integer', 'Integer', 'String', 'String'],
+        'storageStyle|1': ['单点数据', '结构数据'],
+        isWrite: '只读',
+        sumTag: '不累计',
+        multiple: 1,
+        format: '%.3f',
+        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+      },
+    ],
+  });
+
+  console.log(data);
+
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
