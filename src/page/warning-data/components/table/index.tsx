@@ -60,8 +60,6 @@ const { data } = Mock.mock({
   ],
 });
 
-console.log(data);
-
 export default () => {
   function onChange(pagination: any, filters: any, sorter: any, extra: any) {
     console.log('params', pagination, filters, sorter, extra);

@@ -26,8 +26,6 @@ export default () => {
     ],
   });
 
-  console.log(data);
-
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />

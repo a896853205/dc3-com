@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Space, Table, Typography, Tag } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showUser } from '../actions';
