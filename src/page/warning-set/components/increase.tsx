@@ -23,11 +23,13 @@ export default () => {
         onOk={onFinish}
         onCancel={setFalse}
         cancelText='取消'
-        okText='确定'>
+        okText='确定'
+      >
         <Form
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 20 }}
-          layout='horizontal'>
+          layout='horizontal'
+        >
           <Form.Item label='方式' required>
             <Select>
               <Option value='mobilephone'>手机</Option>
@@ -49,11 +51,11 @@ export default () => {
           </Form.Item>
           <Form.Item label='等级'>
             <Select>
-              <Option value='one'>一级</Option>
-              <Option value='two'>二级</Option>
-              <Option value='Three'>三级</Option>
-              <Option value='four'>四级</Option>
-              <Option value='five'>五级</Option>
+              <Option value='one'>1级</Option>
+              <Option value='two'>2级</Option>
+              <Option value='Three'>3级</Option>
+              <Option value='four'>4级</Option>
+              <Option value='five'>5级</Option>
             </Select>
           </Form.Item>
         </Form>

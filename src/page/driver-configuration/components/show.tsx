@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Table, Space, Typography } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showDriverConfig } from '../actions';
@@ -41,8 +41,8 @@ export default () => {
           '/OPCUA/SimulationServer',
         ],
         remarks: '无',
-        updateTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
-        createTime: Random.datetime('yyyy-MM-dd HH:mm:ss'),
+        updateTime: '@date("yyyy-MM-dd HH:mm:ss")',
+        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
     ],
   });

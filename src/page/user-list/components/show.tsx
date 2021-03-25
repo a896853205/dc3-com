@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Space, Table, Typography, Tag, Row } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import Mock, { Random } from 'mockjs';
+import Mock from 'mockjs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showUser } from '../actions';
@@ -26,18 +26,13 @@ export default () => {
   }, [refresh, dispatch]);
 
   const { data } = Mock.mock({
-    'data|5': [
+    'data|80': [
       {
         'key|+1': 1,
         'index|+1': 1,
-        'name|+1': ['Sage', 'zhangsan', 'lisi', 'wangwu'],
-        'email|+1': [
-          '1914567567',
-          '12134537@qq.com',
-          '6786873490r',
-          '654634123@qq.com',
-        ],
-        'tel|+1': ['1914567567', '6512134537', '6786873490', '54654634123'],
+        name: '@name',
+        'email|+1': '@email',
+        tel: 153 + '@natural(10000000,19999999)',
         'tags|+1': [
           ['设备接入', '设备数据管理', '状态监控'],
           ['设备接入', '告警管理', '用户管理'],
