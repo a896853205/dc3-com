@@ -21,7 +21,7 @@ export default () => {
           type='text'
           style={{ color: 'white', fontSize: '14px' }}
           onClick={() => {
-            history.push('/home/userlist');
+            history.push('/home/userList');
           }}
         >
           admin

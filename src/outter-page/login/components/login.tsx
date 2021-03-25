@@ -18,6 +18,17 @@ export default () => {
       }}
     >
       <Form.Item
+        name='username'
+        rules={[{ required: true, message: '请输入用户名!' }]}
+      >
+        <Input
+          prefix={<KeyOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
+          placeholder='用户名'
+          type='username'
+          name='username'
+        />
+      </Form.Item>
+      <Form.Item
         name='password'
         rules={[{ required: true, message: '请输入密码!' }]}
       >
