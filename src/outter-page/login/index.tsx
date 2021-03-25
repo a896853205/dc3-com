@@ -16,7 +16,7 @@ export default () => {
         <div className='left-box'>
           <h1 className='logo'>
             <ReconciliationOutlined />
-            <span className='logo-span'>星盘心理管理</span>
+            <span className='logo-span'>动环监控平台</span>
           </h1>
           <div className='nav'>登录</div>
           <div className='form'>
