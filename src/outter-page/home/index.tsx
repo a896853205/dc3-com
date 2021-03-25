@@ -71,12 +71,12 @@ export default ({ route }: RouteConfigComponentProps) => {
   return (
     <MenuContext.Provider value={MENU_DATA}>
       <Layout>
-        <Sider theme="light" className="home-sider">
+        <Sider theme='light' className='home-sider'>
           <AntdRouterMenu menuData={MENU_DATA} />
         </Sider>
-        <div className="home-content-box">
+        <div className='home-content-box'>
           <Suspense fallback={<PageLoading />}>
-            <Content className="home-content">
+            <Content className='home-content'>
               {renderRoutes(route?.routes)}
             </Content>
           </Suspense>
