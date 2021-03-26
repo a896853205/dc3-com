@@ -40,7 +40,7 @@ export default () => {
           <Form.Item label="所属模板" required>
             <Input placeholder="Virtual-Profile" />
           </Form.Item>
-          <Form.Item label="位号" required>
+          <Form.Item label="位号名" required>
             <Input placeholder="随机值" />
           </Form.Item>
           <Form.Item label="类型" required>

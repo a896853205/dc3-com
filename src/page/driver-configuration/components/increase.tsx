@@ -1,10 +1,10 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import { Button, Modal, Form, Input, Select, DatePicker } from "antd";
-import { useBoolean } from "ahooks";
-import { useDispatch } from "react-redux";
+import { Button, Modal, Form, Input, Select, DatePicker } from 'antd';
+import { useBoolean } from 'ahooks';
+import { useDispatch } from 'react-redux';
 
-import { addDriverConfig } from "../actions";
+import { addDriverConfig } from '../actions';
 
 const { Option } = Select;
 
@@ -21,41 +21,41 @@ export default () => {
 
   return (
     <>
-      <Button onClick={setTrue} type="primary">
-        新增模板
+      <Button onClick={setTrue} type='primary'>
+        新增驱动配置
       </Button>
       <Modal
-        title="新增模板"
+        title='新增驱动配置'
         visible={isShow}
         onOk={onFinish}
         onCancel={setFalse}
-        cancelText="取消"
-        okText="确定"
+        cancelText='取消'
+        okText='确定'
       >
         <Form
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 20 }}
-          layout="horizontal"
+          layout='horizontal'
         >
-          <Form.Item label="所属模板" required>
+          <Form.Item label='所属模板' required>
             <Select></Select>
           </Form.Item>
-          <Form.Item label="属性" required>
+          <Form.Item label='属性' required>
             <Select>
-              <Option value="端口">端口</Option>
-              <Option value="主机">主机</Option>
+              <Option value='端口'>端口</Option>
+              <Option value='主机'>主机</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="内容" required>
-            <Input placeholder="内容" />
+          <Form.Item label='内容' required>
+            <Input placeholder='内容' />
           </Form.Item>
-          <Form.Item label="备注">
+          <Form.Item label='备注'>
             <Input.TextArea />
           </Form.Item>
-          <Form.Item label="修改日期" required>
+          <Form.Item label='修改日期' required>
             <DatePicker />
           </Form.Item>
-          <Form.Item label="创建日期" required>
+          <Form.Item label='创建日期' required>
             <DatePicker />
           </Form.Item>
         </Form>

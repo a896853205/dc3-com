@@ -27,8 +27,8 @@ export default () => {
       <Form.Item label="所属模板" name="name">
         <Input placeholder="所属模板" />
       </Form.Item>
-      <Form.Item label="位号" name="tagname">
-        <Input placeholder="位号" />
+      <Form.Item label="位号名" name="tagname">
+        <Input placeholder="位号名" />
       </Form.Item>
       <Form.Item label="类型" name="type">
         <Select>
