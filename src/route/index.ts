@@ -15,6 +15,7 @@ import DeviceHistoryData from 'src/page/device-history-data';
 import WarningData from 'src/page/warning-data';
 import WarningSet from 'src/page/warning-set';
 import UserList from 'src/page/user-list';
+import DevicePage from 'src/page/capsule/index';
 
 const config: RouteConfig[] = [
   {
@@ -84,6 +85,11 @@ const config: RouteConfig[] = [
       {
         path: '/home/userList',
         component: UserList,
+        exact: true,
+      },
+      {
+        path: '/home/devicePage',
+        component: DevicePage,
         exact: true,
       },
     ],

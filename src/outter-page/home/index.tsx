@@ -57,7 +57,7 @@ const MENU_DATA = [
   new MenuItemGroup(
     '状态监控',
     [
-      new MenuItem('/home/capsule', '设备状态监控'),
+      new MenuItem('/home/devicePage', '设备状态监控'),
       new MenuItem('/home/microService', '平台状态监控'),
     ],
     <LineChartOutlined />
