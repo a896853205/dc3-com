@@ -2,7 +2,6 @@ import { RouteConfig } from 'react-router-config';
 
 import Home from 'src/outter-page/home';
 import Login from 'src/outter-page/login';
-import Capsule from 'src/page/capsule';
 import Formwork from 'src/page/formwork';
 import DriverConfiguration from 'src/page/driver-configuration';
 import Device from 'src/page/device';
@@ -22,11 +21,6 @@ const config: RouteConfig[] = [
     path: '/home',
     component: Home,
     routes: [
-      {
-        path: '/home/capsule',
-        component: Capsule,
-        exact: true,
-      },
       {
         path: '/home/formwork',
         component: Formwork,
