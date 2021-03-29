@@ -24,6 +24,12 @@ const EnergyChart = () => {
         x: 'right',
         y: 'top',
       },
+      grid: {
+        left: '3%',
+        right: '8%',
+        bottom: '3%',
+        containLabel: true,
+      },
       xAxis: {
         type: 'category' as 'category',
         boundaryGap: false,
@@ -39,6 +45,7 @@ const EnergyChart = () => {
           data: [0.1, 0.5, 0.4, 0.6, 0.2, 0.4, 0.5],
         },
       ],
+      color: ['#fac858'],
     };
     energyChart.setOption(option);
   });

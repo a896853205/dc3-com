@@ -39,6 +39,13 @@ const UpsChart = () => {
           data: [0.3, 0.5, 0.3, 0.6, 0.6, 0.7, 0.5],
         },
       ],
+      color: ['#ee6666'],
+      grid: {
+        left: '3%',
+        right: '8%',
+        bottom: '3%',
+        containLabel: true,
+      },
     };
     upsChart.setOption(option);
   });

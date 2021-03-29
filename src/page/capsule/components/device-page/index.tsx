@@ -1,6 +1,23 @@
-import React, { lazy } from 'react';
+import React from 'react';
 
-const DevicePage = lazy(() => import('./components/compose'));
+import useUrlState from '@ahooksjs/use-url-state';
 
-// 整体组件逻辑,lazy等等.
-export default () => <DevicePage />;
+import Breadcrumb from 'src/components/Breadcrumb/Breadcrumb';
+import Search from './components/search';
+import Show from './components/show';
+
+export default () => {
+  const [urlState, setUrlState] = useUrlState();
+
+
+  return (
+    <>
+      <Breadcrumb />
+      {urlState.uuid ? (
+        <Show setUrlState={setUrlState} />
+      ) : (
+        <Search setUrlState={setUrlState} />
+      )}
+    </>
+  );
+};

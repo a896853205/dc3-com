@@ -18,18 +18,8 @@ export default class BarChart extends React.Component<any, any> {
     let data = this.generateData(this.state.dataCount);
     let option = {
       title: {
-        text: '平均数据展示',
+        text: '实时数据展示',
         left: 10,
-      },
-      toolbox: {
-        feature: {
-          dataZoom: {
-            yAxisIndex: false as false,
-          },
-          saveAsImage: {
-            pixelRatio: 2,
-          },
-        },
       },
       tooltip: {
         trigger: 'axis' as 'axis',

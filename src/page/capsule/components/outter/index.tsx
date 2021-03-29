@@ -14,18 +14,16 @@ import './style.css';
 export default () => (
   <>
     <div className='outter-container'>
-      <div className='col3 item-box'>
-        <ul>
-          <li>
-            <RateChart />
-          </li>
-          <li>
-            <EnergyChart />
-          </li>
-          <li>
-            <UpsChart />
-          </li>
-        </ul>
+      <div className='col3'>
+        <div className='item-box'>
+          <RateChart />
+        </div>
+        <div className='item-box'>
+          <EnergyChart />
+        </div>
+        <div className='item-box'>
+          <UpsChart />
+        </div>
       </div>
       <div className='col6'>
         <div className='item-box'>
@@ -35,16 +33,16 @@ export default () => (
           <StepLine />
         </div>
       </div>
-      <div className='col3 item-box'>
-        <div className='item-box1'>
-          <h3>告警趋势</h3>
+      <div className='col3'>
+        <div className='item-box'>
+          <h3>近日告警次数</h3>
           <WarningNumber />
         </div>
-        <div className='item-box2'>
+        <div className='item-box'>
           <h3>告警处理进度</h3>
           <LineChart />
         </div>
-        <div>
+        <div className='item-box'>
           <h3>最近告警详情</h3>
           <List />
         </div>

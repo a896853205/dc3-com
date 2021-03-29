@@ -39,6 +39,13 @@ const RateChart = () => {
           data: [0.5, 0.3, 0.4, 0.6, 0.6, 0.4, 0.4],
         },
       ],
+      color: ['#91cc75'],
+      grid: {
+        left: '3%',
+        right: '8%',
+        bottom: '3%',
+        containLabel: true,
+      },
     };
     rateChart.setOption(option);
   });

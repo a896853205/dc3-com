@@ -16,9 +16,9 @@ export default () => {
         data: ['温湿度传感器'],
       },
       grid: {
-        left: '10%',
-        right: '10%',
-        bottom: '30%',
+        left: '3%',
+        right: '8%',
+        bottom: '3%',
         containLabel: true,
       },
       toolbox: {

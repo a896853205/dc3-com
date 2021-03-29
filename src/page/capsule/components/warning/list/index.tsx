@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { List, Typography } from 'antd';
+import { List, Typography, Button } from 'antd';
 
 const data = [
   '温湿度传感器1：通信状态：断线报警',
@@ -17,7 +17,9 @@ export default () => {
       dataSource={data}
       renderItem={item => (
         <List.Item>
-          <Typography.Text mark>{item}</Typography.Text>
+          <Typography.Text>
+            <Button type='link'>{item}</Button>
+          </Typography.Text>
         </List.Item>
       )}
     />

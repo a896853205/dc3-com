@@ -9,7 +9,7 @@ function StepLine(props: any) {
     let stepLineChart = echarts.init(stepLineRef.current as HTMLDivElement);
     let option = {
       title: {
-        text: '告警次数',
+        text: '告警次数趋势',
       },
       tooltip: {
         trigger: 'axis' as 'axis',
@@ -19,14 +19,9 @@ function StepLine(props: any) {
       },
       grid: {
         left: '3%',
-        right: '4%',
+        right: '8%',
         bottom: '3%',
         containLabel: true,
-      },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
       },
       xAxis: {
         type: 'category' as 'category',
@@ -43,6 +38,7 @@ function StepLine(props: any) {
           data: [65, 83, 60, 79, 96, 87, 70],
         },
       ],
+      color: ['#ee6666']
     };
     stepLineChart.setOption(option);
   }, [data]);
