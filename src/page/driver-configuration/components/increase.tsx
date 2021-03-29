@@ -37,7 +37,7 @@ export default () => {
           wrapperCol={{ span: 20 }}
           layout='horizontal'
         >
-          <Form.Item label='所属模板' required>
+          <Form.Item label='所属产品' required>
             <Select></Select>
           </Form.Item>
           <Form.Item label='属性' required>

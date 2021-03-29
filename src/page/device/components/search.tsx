@@ -23,7 +23,7 @@ export default () => {
       <Form.Item label='设备'>
         <Input placeholder='设备' />
       </Form.Item>
-      <Form.Item label='所属模板'>
+      <Form.Item label='所属产品'>
         <Select></Select>
       </Form.Item>
       <Form.Item wrapperCol={{ span: 14, offset: 4 }}>

@@ -17,7 +17,7 @@ const initialState: Formwork.ReduxState = {
 
 export default handleActions(
   {
-    // 增加模板后将刷新值改为true.
+    // 增加产品后将刷新值改为true.
     [actionTypes.ADD_FORMWORK]: state => {
       console.log('REDUX ADD_FORMWORK');
 
@@ -26,7 +26,7 @@ export default handleActions(
       });
     },
 
-    // 搜索模板时将参数修改并将刷新值改为true
+    // 搜索产品时将参数修改并将刷新值改为true
     [actionTypes.SEARCH_FORMWORK]: (state, { payload: { searchParam } }) => {
       console.log('REDUX SEARCH_FORMWORK');
 
@@ -36,7 +36,7 @@ export default handleActions(
       });
     },
 
-    // 查询模板之后将刷新值改为false.
+    // 查询产品之后将刷新值改为false.
     [actionTypes.SHOW_FORMWORK]: state => {
       console.log('REDUX SHOW_FORMWORK');
 

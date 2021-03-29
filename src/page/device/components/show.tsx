@@ -59,7 +59,7 @@ export default () => {
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
       <Column title='设备' dataIndex='device' key='devce' />
-      <Column title='所属模板' dataIndex='template' key='template' />
+      <Column title='所属产品' dataIndex='template' key='template' />
       <Column title='存储类型' dataIndex='storageStyle' key='storageStyle' />
       <Column title='状态' dataIndex='state' key='state' />
       <Column title='备注' dataIndex='remarks' key='remarks' />

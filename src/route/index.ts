@@ -3,6 +3,7 @@ import { RouteConfig } from 'react-router-config';
 import Home from 'src/outter-page/home';
 import Login from 'src/outter-page/login';
 import Formwork from 'src/page/formwork';
+import AddFormwork from 'src/page/formwork/components/increase';
 import DriverConfiguration from 'src/page/driver-configuration';
 import Device from 'src/page/device';
 import Tagname from 'src/page/tagname';
@@ -15,6 +16,7 @@ import WarningData from 'src/page/warning-data';
 import WarningSet from 'src/page/warning-set';
 import UserList from 'src/page/user-list';
 import DevicePage from 'src/page/capsule/index';
+import { addFormwork } from 'src/page/formwork/actions';
 
 const config: RouteConfig[] = [
   {
@@ -24,6 +26,11 @@ const config: RouteConfig[] = [
       {
         path: '/home/formwork',
         component: Formwork,
+        exact: true,
+      },
+      {
+        path: '/home/formwork/addFormwork',
+        component: AddFormwork,
         exact: true,
       },
       {

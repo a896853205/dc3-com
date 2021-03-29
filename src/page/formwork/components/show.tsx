@@ -1,21 +1,25 @@
 import React, { useEffect } from 'react';
 
-import { Space, Table, Typography } from 'antd';
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import Mock from 'mockjs';
+import { Typography, Button, Tabs } from 'antd';
+import { LeftOutlined } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showFormwork } from '../actions';
+import FeaturesDefine from '../components/contains/features-define';
+import FormworkDetail from '../components/contains/formwork-detail';
 
 import 'src/page/style/style.css';
 
-const { Column } = Table;
+const { Title } = Typography;
+const { TabPane } = Tabs;
 
-export default () => {
+export default ({ setUrlState }: { setUrlState: Function }) => {
   let refresh = useSelector(
     (state: Formwork.ReduxState) => state.formwork.refresh
   );
   let dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     console.log(refresh);
@@ -26,54 +30,27 @@ export default () => {
     }
   }, [refresh, dispatch]);
 
-  const { data } = Mock.mock({
-    'data|100': [
-      {
-        'index|+1': 1,
-        'name|+1': [
-          'ModbusTcpProfile',
-          'MqttProfile',
-          'OpcUaProfile',
-          'OpcDaProfile',
-        ],
-        'isPrivate|1': ['私有', '公有'],
-        'drive|+1': [
-          'ModbusDriver',
-          'MqttDriver',
-          'OpcDaDriver',
-          'OpcUaDriver',
-        ],
-        createTime: '@date("yyyy-MM-dd HH:mm:ss")',
-      },
-    ],
-  });
-
-  console.log(data);
-
+  const callback = () => {};
   return (
-    <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
-      <Column title='#' dataIndex='index' key='index' />
-      <Column title='模板' dataIndex='name' key='name' />
-      <Column title='公/私有' dataIndex='isPrivate' key='isPrivate' />
-      <Column title='所属驱动' dataIndex='drive' key='drive' />
-      <Column title='创建日期' dataIndex='createTime' key='createTime' />
-      <Column
-        title='操作'
-        dataIndex=''
-        key=''
-        render={() => (
-          <Space size='middle'>
-            <Typography.Link>
-              <EditOutlined />
-              编辑
-            </Typography.Link>
-            <Typography.Link>
-              <DeleteOutlined />
-              删除
-            </Typography.Link>
-          </Space>
-        )}
-      />
-    </Table>
+    <>
+      <Title>
+        <Button
+          shape='circle'
+          style={{ marginRight: '10px' }}
+          onClick={() => setUrlState({ uuid: undefined })}
+        >
+          <LeftOutlined />
+        </Button>
+        产品名: ModbusTcp-Device
+      </Title>
+      <Tabs defaultActiveKey='1' onChange={callback}>
+        <TabPane tab='产品信息' key='1'>
+          <FormworkDetail />
+        </TabPane>
+        <TabPane tab='功能定义' key='2'>
+          <FeaturesDefine />
+        </TabPane>
+      </Tabs>
+    </>
   );
 };

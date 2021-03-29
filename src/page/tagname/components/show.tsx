@@ -52,7 +52,7 @@ export default () => {
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
-      <Column title='所属模板' dataIndex='name' key='name' />
+      <Column title='所属产品' dataIndex='name' key='name' />
       <Column title='位号' dataIndex='tagname' key='tagname' />
       <Column title='类型' dataIndex='type' key='type' />
       <Column title='读/写' dataIndex='isWrite' key='isWrite' />

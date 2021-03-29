@@ -39,7 +39,7 @@ export default () => {
           <Form.Item label='设备' required>
             <Input placeholder='设备' />
           </Form.Item>
-          <Form.Item label='所属模板' required>
+          <Form.Item label='所属产品' required>
             <Select></Select>
           </Form.Item>
           <Form.Item label='存储类型'>

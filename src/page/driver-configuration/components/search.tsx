@@ -23,7 +23,7 @@ export default () => {
       layout="horizontal"
       onFinish={onFinish}
     >
-      <Form.Item label="所属模板">
+      <Form.Item label="所属产品">
         <Select></Select>
       </Form.Item>
       <Form.Item label="属性">

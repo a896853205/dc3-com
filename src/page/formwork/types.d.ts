@@ -1,6 +1,6 @@
 declare namespace Formwork {
   /**
-   * 模板类型
+   * 产品类型
    */
   interface Item {
     uuid: string;

@@ -29,7 +29,7 @@ const MENU_DATA = [
   new MenuItemGroup(
     '设备接入',
     [
-      new MenuItem('/home/formwork', '模板'),
+      new MenuItem('/home/formwork', '产品'),
       new MenuItem('/home/tagname', '位号'),
       new MenuItem('/home/driverConfiguration', '驱动配置'),
       new MenuItem('/home/device', '设备'),

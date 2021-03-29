@@ -24,8 +24,8 @@ export default () => {
       layout="horizontal"
       onFinish={onFinish}
     >
-      <Form.Item label="所属模板" name="name">
-        <Input placeholder="所属模板" />
+      <Form.Item label="所属产品" name="name">
+        <Input placeholder="所属产品" />
       </Form.Item>
       <Form.Item label="位号名" name="tagname">
         <Input placeholder="位号名" />
