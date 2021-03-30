@@ -23,10 +23,11 @@ import { addFormwork } from '../actions';
 import Column from 'antd/lib/table/Column';
 
 const { Option } = Select;
-const { Title } = Typography;
+const { Title, Text, Link } = Typography;
 
 export default () => {
   const [visible, setVisible] = useState(false);
+  const [clickable, setClickable] = useState(false);
   const showDrawer = () => {
     setVisible(true);
   };
@@ -89,16 +90,25 @@ export default () => {
         <Form.Item label='标准品类' required>
           <Space>
             <Form.Item name='modal-type' noStyle>
-              <Select style={{ width: 200 }}>
+              <Select
+                style={{ width: 200 }}
+                onSelect={() => {
+                  setClickable(true);
+                }}
+              >
                 <Option value='铂电阻温度传感器'>铂电阻温度传感器</Option>
                 <Option value='室内温度传感器'>室内温度传感器</Option>
               </Select>
             </Form.Item>
-            <Tooltip title='查看产品标准品类的功能'>
-              <Typography.Link href='#API' onClick={showDrawer}>
-                查看功能
-              </Typography.Link>
-            </Tooltip>
+            {clickable ? (
+              <Tooltip title='查看产品标准品类的功能'>
+                <Typography.Link href='#API' onClick={showDrawer}>
+                  查看功能
+                </Typography.Link>
+              </Tooltip>
+            ) : (
+              <Text disabled>查看功能</Text>
+            )}
           </Space>
         </Form.Item>
         <Form.Item label='公/私有' required>
