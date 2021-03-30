@@ -27,18 +27,13 @@ export default () => {
     'data|100': [
       {
         'index|+1': 1,
-        'device|+1': [
-          'ModbusTcp-Device',
-          'Mqtt-Device',
-          'OpcUa-Device',
-          'OpcDa-Device',
+        'name|+1': [
+          'ModbusTcp-group',
+          'Mqtt-group',
+          'OpcUa-group',
+          'OpcDa-group',
         ],
-        'template|+1': [
-          'ModbusTcpProfile',
-          'MqttProfile',
-          'OpcUaProfile',
-          'OpcDaProfile',
-        ],
+        id: '',
         state: '在线',
         'remarks|+1': [
           'modbus设备-温度传感器',
@@ -57,11 +52,9 @@ export default () => {
   return (
     <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
       <Column title='#' dataIndex='index' key='index' />
-      <Column title='设备' dataIndex='device' key='devce' />
-      <Column title='所属产品' dataIndex='template' key='template' />
-      <Column title='状态' dataIndex='state' key='state' />
+      <Column title='分组名称' dataIndex='name' key='name' />
+      <Column title='分组ID' dataIndex='id' key='id' />
       <Column title='备注' dataIndex='remarks' key='remarks' />
-      <Column title='修改日期' dataIndex='updateTime' key='updateTime' />
       <Column title='创建日期' dataIndex='createTime' key='createTime' />
       <Column
         title='操作'

@@ -9,7 +9,6 @@ import {
   Typography,
   Form,
   Input,
-  DatePicker,
   Drawer,
   Space,
   Tooltip,
@@ -23,7 +22,7 @@ import { addFormwork } from '../actions';
 import Column from 'antd/lib/table/Column';
 
 const { Option } = Select;
-const { Title, Text, Link } = Typography;
+const { Title, Text } = Typography;
 
 export default () => {
   const [visible, setVisible] = useState(false);
@@ -111,12 +110,6 @@ export default () => {
             )}
           </Space>
         </Form.Item>
-        <Form.Item label='公/私有' required>
-          <Select>
-            <Option value='公有'>公有</Option>
-            <Option value='私有'>私有</Option>
-          </Select>
-        </Form.Item>
         <Form.Item label='所属驱动' required>
           <Select>
             <Option value='Mqtt'>Mqtt</Option>
@@ -127,9 +120,6 @@ export default () => {
         </Form.Item>
         <Form.Item label='备注'>
           <Input.TextArea />
-        </Form.Item>
-        <Form.Item label='创建日期' required>
-          <DatePicker />
         </Form.Item>
         <Form.Item {...tailLayout}>
           <Button type='primary' htmlType='submit'>

@@ -6,6 +6,7 @@ import Formwork from 'src/page/formwork';
 import AddFormwork from 'src/page/formwork/components/increase';
 import DriverConfiguration from 'src/page/driver-configuration';
 import Device from 'src/page/device';
+import Group from 'src/page/group';
 import Tagname from 'src/page/tagname';
 import TagConfig from 'src/page/tag-config';
 import MicroService from 'src/page/micro-service';
@@ -51,6 +52,11 @@ const config: RouteConfig[] = [
       {
         path: '/home/device',
         component: Device,
+        exact: true,
+      },
+      {
+        path: '/home/group',
+        component: Group,
         exact: true,
       },
       {

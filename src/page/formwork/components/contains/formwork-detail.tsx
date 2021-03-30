@@ -19,14 +19,13 @@ export default () => {
         }
       >
         <Descriptions.Item label='产品名称'>ModbusTcpProfile</Descriptions.Item>
-        <Descriptions.Item label='公/私有'>私有</Descriptions.Item>
         <Descriptions.Item label='创建日期'>
           1974-07-08 08:15:38
         </Descriptions.Item>
         <Descriptions.Item label='所属驱动'>ModbusDriver</Descriptions.Item>
         <Descriptions.Item label='所属品类'>标准品类</Descriptions.Item>
         <Descriptions.Item label='状态' span={3}>
-          <Badge status='processing' text='运行中' />
+          <Badge status='processing' text='已使用' />
         </Descriptions.Item>
         <Descriptions.Item label='产品描述'>
           ModbusTcpProfile产品为温湿度传感器一类产品

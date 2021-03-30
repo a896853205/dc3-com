@@ -30,10 +30,11 @@ const MENU_DATA = [
     '设备接入',
     [
       new MenuItem('/home/formwork', '产品'),
-      new MenuItem('/home/tagname', '位号'),
-      new MenuItem('/home/driverConfiguration', '驱动配置'),
+      // new MenuItem('/home/tagname', '位号'),
+      // new MenuItem('/home/driverConfiguration', '驱动配置'),
       new MenuItem('/home/device', '设备'),
-      new MenuItem('/home/tagconfig', '位号配置'),
+      new MenuItem('/home/group','分组'),
+      // new MenuItem('/home/tagconfig', '位号配置'),
     ],
     <ApiOutlined />
   ),

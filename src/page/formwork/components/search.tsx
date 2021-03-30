@@ -24,7 +24,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           'OpcUaProfile',
           'OpcDaProfile',
         ],
-        'isPrivate|1': ['私有', '公有'],
         'drive|+1': [
           'ModbusDriver',
           'MqttDriver',
@@ -53,12 +52,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         <Form.Item label='产品' name='name'>
           <Input placeholder='产品' />
         </Form.Item>
-        <Form.Item label='公/私有' name='isPrivate'>
-          <Select>
-            <Option value={0}>公有</Option>
-            <Option value={1}>私有</Option>
-          </Select>
-        </Form.Item>
         <Form.Item label='所属驱动' name='drive'>
           <Select>
             <Option value='Mqtt'>Mqtt</Option>
@@ -81,7 +74,11 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
       >
         新增产品
       </Button>
-      <Table dataSource={data} size='small' rowClassName='dc3-table-row' onRow={record => {
+      <Table
+        dataSource={data}
+        size='small'
+        rowClassName='dc3-table-row'
+        onRow={record => {
           return {
             onClick: _event => {
               setUrlState({
@@ -89,10 +86,10 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
               });
             },
           };
-        }}>
+        }}
+      >
         <Column title='#' dataIndex='index' key='index' />
         <Column title='产品' dataIndex='name' key='name' />
-        <Column title='公/私有' dataIndex='isPrivate' key='isPrivate' />
         <Column title='所属驱动' dataIndex='drive' key='drive' />
         <Column title='创建日期' dataIndex='createTime' key='createTime' />
         <Column

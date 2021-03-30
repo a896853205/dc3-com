@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react';
 
-import { Button, Modal, Form, Input, Select } from 'antd';
+import { Button, Modal, Form, Input } from 'antd';
 import { useBoolean } from 'ahooks';
 import { useDispatch } from 'react-redux';
 
 import { addDevice } from '../actions';
-
 
 export default () => {
   const [isShow, { setTrue, setFalse }] = useBoolean(false);
@@ -20,10 +19,10 @@ export default () => {
   return (
     <>
       <Button onClick={setTrue} type='primary'>
-        新增设备
+        创建分组
       </Button>
       <Modal
-        title='新增设备'
+        title='创建分组'
         visible={isShow}
         onOk={onFinish}
         onCancel={setFalse}
@@ -35,13 +34,10 @@ export default () => {
           wrapperCol={{ span: 20 }}
           layout='horizontal'
         >
-          <Form.Item label='设备' required>
-            <Input placeholder='设备' />
+          <Form.Item label='分组名称' required>
+            <Input placeholder='请输入分组名称' />
           </Form.Item>
-          <Form.Item label='所属产品' required>
-            <Select></Select>
-          </Form.Item>
-          <Form.Item label='备注'>
+          <Form.Item label='分组描述'>
             <Input.TextArea />
           </Form.Item>
         </Form>

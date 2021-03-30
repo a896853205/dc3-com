@@ -27,7 +27,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           'OpcUaProfile',
           'OpcDaProfile',
         ],
-        'storageStyle|1': ['单点数据', '结构数据'],
         state: '在线',
         'remarks|+1': [
           'modbus设备-温度传感器',
@@ -79,7 +78,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         <Column title='#' dataIndex='index' key='index' />
         <Column title='设备' dataIndex='device' key='devce' />
         <Column title='所属产品' dataIndex='template' key='template' />
-        <Column title='存储类型' dataIndex='storageStyle' key='storageStyle' />
         <Column title='状态' dataIndex='state' key='state' />
         <Column title='备注' dataIndex='remarks' key='remarks' />
         <Column
