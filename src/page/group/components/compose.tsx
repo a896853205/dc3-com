@@ -1,18 +1,23 @@
 import React from 'react';
 
+import useUrlState from '@ahooksjs/use-url-state';
+
 import Increase from './increase';
-import Search from './search';
 import Show from './show';
 
 import BreadcrumbList from '../../../components/Breadcrumb/Breadcrumb';
 
 export default () => {
+  const [urlState, setUrlState] = useUrlState();
+
   return (
     <>
       <BreadcrumbList />
-      <Search />
-      <Increase />
-      <Show />
+      {urlState.uuid ? (
+        <Show setUrlState={setUrlState} />
+      ) : (
+        <Increase setUrlState={setUrlState} />
+      )}
     </>
   );
 };
