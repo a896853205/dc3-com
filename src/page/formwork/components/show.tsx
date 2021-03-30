@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import { Typography, Button, Tabs } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showFormwork } from '../actions';
@@ -19,7 +18,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
     (state: Formwork.ReduxState) => state.formwork.refresh
   );
   let dispatch = useDispatch();
-  const history = useHistory();
 
   useEffect(() => {
     console.log(refresh);
@@ -41,7 +39,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         >
           <LeftOutlined />
         </Button>
-        产品名: ModbusTcp-Device
+        产品名: ModbusTcpProfile
       </Title>
       <Tabs defaultActiveKey='1' onChange={callback}>
         <TabPane tab='产品信息' key='1'>

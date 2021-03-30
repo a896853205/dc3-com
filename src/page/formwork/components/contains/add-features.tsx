@@ -1,7 +1,19 @@
 import React, { useCallback } from 'react';
-import { Button, Modal, Form, Input, Select } from 'antd';
+import {
+  Button,
+  Modal,
+  Form,
+  Input,
+  Select,
+  Table,
+  Space,
+  Typography,
+} from 'antd';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { useBoolean } from 'ahooks';
+import Column from 'antd/lib/table/Column';
+import { addFormwork } from '../../actions';
 
 const { Option } = Select;
 
@@ -12,9 +24,28 @@ export default () => {
   const onFinish = useCallback(() => {
     // TODO: HTTP请求后台增加
 
-    // dispatch(addTagname());
+    dispatch(addFormwork());
     setFalse();
   }, [dispatch, setFalse]);
+
+  const data = [
+    {
+      key: '1',
+      type: '属性',
+      name: '用电量',
+      id: 'PowerConsumption',
+      dataType: 'int32 (整数型)',
+      dataDefine: '取值范围：0~1',
+    },
+    {
+      key: '2',
+      type: '属性',
+      name: '当前温度',
+      id: 'CurrentTemperature',
+      dataType: 'int32 (整数型)',
+      dataDefine: '取值范围：0~1',
+    },
+  ];
 
   return (
     <>
@@ -30,7 +61,7 @@ export default () => {
         okText='确定'
       >
         <Form
-          labelCol={{ span: 4 }}
+          labelCol={{ span: 6 }}
           wrapperCol={{ span: 20 }}
           layout='horizontal'
         >
@@ -99,6 +130,30 @@ export default () => {
           </Form.Item>
         </Form>
       </Modal>
+      <Table dataSource={data} size='small' rowClassName='dc3-table-row'>
+        <Column title='功能类型' dataIndex='type' key='type' />
+        <Column title='功能名称' dataIndex='name' key='name' />
+        <Column title='标识符' dataIndex='id' key='id' />
+        <Column title='数据类型' dataIndex='dataType' key='dataType' />
+        <Column title='数据定义' dataIndex='dataDefine' key='dataDefine' />
+        <Column
+          title='操作'
+          dataIndex=''
+          key=''
+          render={() => (
+            <Space size='middle'>
+              <Typography.Link>
+                <EditOutlined />
+                编辑
+              </Typography.Link>
+              <Typography.Link>
+                <DeleteOutlined />
+                删除
+              </Typography.Link>
+            </Space>
+          )}
+        />
+      </Table>
     </>
   );
 };

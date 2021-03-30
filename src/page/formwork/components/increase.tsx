@@ -1,3 +1,6 @@
+/**
+ * 具体的产品新增页面
+ */
 import React, { useCallback, useState } from 'react';
 
 import {
@@ -10,21 +13,19 @@ import {
   Drawer,
   Space,
   Tooltip,
+  Table,
 } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
-import { useBoolean } from 'ahooks';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { addFormwork } from '../actions';
-import Breadcrumb from 'src/components/Breadcrumb/Breadcrumb';
-import Features from './contains/features';
+import Column from 'antd/lib/table/Column';
 
 const { Option } = Select;
 const { Title } = Typography;
 
 export default () => {
-  const [isShow, { setTrue, setFalse }] = useBoolean(false);
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -37,17 +38,33 @@ export default () => {
   const tailLayout = {
     wrapperCol: { offset: 4, span: 16 },
   };
+  const data = [
+    {
+      key: '1',
+      type: '属性',
+      name: '温度',
+      id: 'CurrentTemperature',
+      dataType: 'DOUBLE',
+      tag: '可选',
+    },
+    {
+      key: '2',
+      type: '属性',
+      name: '温度',
+      id: 'CurrentHumidity',
+      dataType: 'DOUBLE',
+      tag: '必选',
+    },
+  ];
   const onFinish = useCallback(() => {
     // TODO: HTTP请求后台增加
 
     dispatch(addFormwork());
-    setFalse();
-  }, [dispatch, setFalse]);
+  }, [dispatch]);
 
   return (
     // TODO:面包屑显示有问题
     <>
-      <Breadcrumb />
       <Title>
         <Button
           shape='circle'
@@ -69,7 +86,7 @@ export default () => {
         <Form.Item label='产品名称' required>
           <Input placeholder='请输入产品名称' />
         </Form.Item>
-        <Form.Item label='标准品类'>
+        <Form.Item label='标准品类' required>
           <Space>
             <Form.Item name='modal-type' noStyle>
               <Select style={{ width: 200 }}>
@@ -101,20 +118,14 @@ export default () => {
         <Form.Item label='备注'>
           <Input.TextArea />
         </Form.Item>
-        <Form.Item label='修改日期' required>
-          <DatePicker />
-        </Form.Item>
         <Form.Item label='创建日期' required>
           <DatePicker />
         </Form.Item>
         <Form.Item {...tailLayout}>
           <Button type='primary' htmlType='submit'>
-            Submit
+            新建
           </Button>
-          <Button htmlType='button'>Reset</Button>
-          <Button type='link' htmlType='button'>
-            Fill form
-          </Button>
+          <Button htmlType='button'>取消</Button>
         </Form.Item>
       </Form>
       <Drawer
@@ -125,7 +136,12 @@ export default () => {
         visible={visible}
         width='750px'
       >
-        <Features />
+        <Table dataSource={data}>
+          <Column title='功能类型' dataIndex='type' key='type' />
+          <Column title='功能名称' dataIndex='name' key='name' />
+          <Column title='标识符' dataIndex='id' key='id' />
+          <Column title='数据类型' dataIndex='dataType' key='dataType' />
+        </Table>
       </Drawer>
     </>
   );

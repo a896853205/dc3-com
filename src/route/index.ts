@@ -16,7 +16,6 @@ import WarningData from 'src/page/warning-data';
 import WarningSet from 'src/page/warning-set';
 import UserList from 'src/page/user-list';
 import DevicePage from 'src/page/capsule/index';
-import { addFormwork } from 'src/page/formwork/actions';
 
 const config: RouteConfig[] = [
   {
