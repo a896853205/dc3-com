@@ -1,32 +1,28 @@
-declare namespace Device {
+declare namespace Group {
   /**
-   * 设备类型
+   * 分组类型
    */
   interface Item {
     uuid: string;
-    device: string;
-    dev: string;
-    group: string;
-    storeType: string;
+    name: string;
+    id: string;
+    devices: string[];
     createTime: number;
-    updateTime: number;
   }
 
   /**
-   * 搜索设备参数
+   * 搜索分组参数
    */
   interface SearchParam {
-    device: string;
-    dev: string;
-    group: string;
+    name: string;
   }
 
   /**
    * redux store
    */
   interface ReduxState {
-    device: {
-      devices: Device.Item[];
+    group: {
+      groups: Group.Item[];
       refresh: boolean;
       searchParam: SearchParam;
     };

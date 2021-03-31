@@ -5,7 +5,7 @@ import { LeftOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import Mock from 'mockjs';
 
-import { showDevice } from '../actions';
+import { showGroup } from '../actions';
 import DeviceList from './contains/device-list';
 import GroupDetail from './contains/group-detail';
 
@@ -22,7 +22,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
 
     if (refresh) {
       // TODO: HTTP请求device数据
-      dispatch(showDevice());
+      dispatch(showGroup());
     }
   }, [refresh, dispatch]);
 
