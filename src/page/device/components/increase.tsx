@@ -41,6 +41,9 @@ export default () => {
           <Form.Item label='所属产品' required>
             <Select></Select>
           </Form.Item>
+          <Form.Item label='所在位置' required>
+            <Input placeholder='所在位置' />
+          </Form.Item>
           <Form.Item label='备注'>
             <Input.TextArea />
           </Form.Item>
