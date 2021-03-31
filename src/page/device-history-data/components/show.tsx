@@ -15,7 +15,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
     'data|100': [
       {
         'index|+1': 1,
-        template: 'tag-int',
+        group: 'ModbusTcp-group',
         'state|50-100.8': 1,
         remarks: '@date("yyyy-MM-dd HH:mm:ss")',
       },
@@ -46,7 +46,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         rowClassName='dc3-table-row'
       >
         <Column title='#' dataIndex='index' key='index' />
-        <Column title='所属位号' dataIndex='template' key='template' />
+        <Column title='所属分组' dataIndex='group' key='group' />
         <Column title='原始值' dataIndex='state' key='state' />
         <Column
           title='处理值'

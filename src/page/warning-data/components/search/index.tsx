@@ -1,26 +1,10 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 import { Form, Button, Input, Select } from 'antd';
-import { useDispatch } from 'react-redux';
-
-import { searchDevice } from '../actions';
 
 export default () => {
-  const dispatch = useDispatch();
-
-  const onFinish = useCallback(
-    value => {
-      dispatch(searchDevice({ searchParam: value }));
-    },
-    [dispatch]
-  );
   return (
-    <Form
-      labelCol={{ span: 4 }}
-      wrapperCol={{ span: 10 }}
-      layout='horizontal'
-      onFinish={onFinish}
-    >
+    <Form labelCol={{ span: 4 }} wrapperCol={{ span: 10 }} layout='horizontal'>
       <Form.Item label='设备'>
         <Input placeholder='设备' />
       </Form.Item>

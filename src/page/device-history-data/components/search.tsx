@@ -66,7 +66,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         <Form.Item label='所属产品'>
           <Select></Select>
         </Form.Item>
-        <Form.Item label='所属位号'>
+        <Form.Item label='所属分组'>
           <Select></Select>
         </Form.Item>
         <Form.Item label='起止时间'>

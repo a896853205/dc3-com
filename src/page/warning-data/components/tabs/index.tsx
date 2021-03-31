@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs } from 'antd';
 import Temperature from 'src/page/warning-data/components/temperature/temperature';
 import Breadcrumb from 'src/components/Breadcrumb/Breadcrumb';
+import Search from '../search';
 
 const { TabPane } = Tabs;
 
@@ -13,6 +14,7 @@ export default () => (
     <Breadcrumb />
     <Tabs defaultActiveKey='1' onChange={callback}>
       <TabPane tab='温湿度传感器' key='1'>
+        <Search />
         <Temperature />
       </TabPane>
       <TabPane tab='水浸传感器' key='2'>
