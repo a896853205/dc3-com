@@ -16,7 +16,7 @@ const currentData = (delay: number, setData: Function, data: any[]) => {
   setTimeout(() => {
     dataItem = Mock.mock({
       'index|+1': 1,
-      template: 'tag-int',
+      group: 'ModbusTcp-group',
       'state|50-100.8': 1,
       remarks: '@now',
     });
@@ -56,7 +56,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         rowClassName='dc3-table-row'
       >
         <Column title='#' dataIndex='index' key='index' />
-        <Column title='所属位号' dataIndex='template' key='template' />
+        <Column title='所属分组' dataIndex='group' key='group' />
         <Column title='原始值' dataIndex='state' key='state' />
         <Column
           title='处理值'
