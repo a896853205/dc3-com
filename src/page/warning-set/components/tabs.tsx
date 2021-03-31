@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs, Alert } from 'antd';
 import Temperature from './temperature';
 import Breadcrumb from 'src/components/Breadcrumb/Breadcrumb';
+import Important from './important-warning';
 
 const { TabPane } = Tabs;
 
@@ -36,7 +37,7 @@ export default () => (
       <TabPane tab='重要实时告警' key='2'>
         <Tabs defaultActiveKey='1' onChange={callback}>
           <TabPane tab='温湿度传感器' key='1'>
-            <Temperature />
+            <Important />
           </TabPane>
           <TabPane tab='水浸传感器' key='2'>
             Content of Tab Pane 2
