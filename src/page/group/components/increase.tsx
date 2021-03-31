@@ -6,7 +6,7 @@ import { useBoolean } from 'ahooks';
 import { useDispatch } from 'react-redux';
 import Mock from 'mockjs';
 
-import { addDevice } from '../actions';
+import { addGroup } from '../actions';
 import Column from 'antd/lib/table/Column';
 
 const { Search } = Input;
@@ -17,7 +17,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
 
   const onFinish = useCallback(() => {
     // TODO:http向后台请求数据
-    dispatch(addDevice());
+    dispatch(addGroup());
     setFalse();
   }, [dispatch, setFalse]);
 
@@ -62,10 +62,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           </Form.Item>
         </Form>
       </Modal>
-      <Search
-      placeholder='请输入分组名称'
-      style={{ width: 200 }}
-    />
+      <Search placeholder='请输入分组名称' style={{ width: 200 }} />
       <Table
         dataSource={data}
         size='small'

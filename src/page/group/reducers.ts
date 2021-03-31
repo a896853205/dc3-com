@@ -3,14 +3,12 @@ import produce from 'immer';
 
 import { actionTypes } from './actions';
 
-const initialState: Device.ReduxState = {
-  device: {
-    devices: [],
+const initialState: Group.ReduxState = {
+  group: {
+    groups: [],
     refresh: true,
     searchParam: {
-      device: '',
-      dev: '',
-      group: '',
+      name: '',
     },
   },
 };
@@ -18,32 +16,32 @@ const initialState: Device.ReduxState = {
 export default handleActions(
   {
     // 增加设备后将刷新值改为true.
-    [actionTypes.ADD_DEVICE]: state => {
-      console.log('REDUX ADD_DEVICE');
+    [actionTypes.ADD_GROUP]: state => {
+      console.log('REDUX ADD_GROUP');
 
-      return produce(state, draftState => {
+      return produce(state, (draftState: any) => {
         draftState.refresh = true;
       });
     },
 
     // 搜索设备时将参数修改并将刷新值改为true
-    [actionTypes.SEARCH_DEVICE]: (state, { payload: { searchParam } }) => {
-      console.log('REDUX SEARCH_DEVICE');
+    [actionTypes.SEARCH_GROUP]: (state, { payload: { searchParam } }) => {
+      console.log('REDUX SEARCH_GROUP');
 
-      return produce(state, draftState => {
+      return produce(state, (draftState: any) => {
         draftState.refresh = true;
         draftState.searchParam = searchParam;
       });
     },
 
     // 查询设备之后将刷新值改为false.
-    [actionTypes.SHOW_DEVICE]: state => {
-      console.log('REDUX SHOW_DEVICE');
+    [actionTypes.SHOW_GROUP]: state => {
+      console.log('REDUX SHOW_GROUP');
 
-      return produce(state, draftState => {
+      return produce(state, (draftState: any) => {
         draftState.refresh = false;
       });
     },
   },
-  initialState.device
+  initialState.group
 );

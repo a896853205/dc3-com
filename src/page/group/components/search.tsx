@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { Input } from 'antd';
 import { useDispatch } from 'react-redux';
 
-import { searchDevice } from '../actions';
+import { searchGroup } from '../actions';
 const { Search } = Input;
 
 export default () => {
@@ -11,7 +11,7 @@ export default () => {
 
   const searchGroup = useCallback(
     value => {
-      dispatch(searchDevice({ searchParam: value }));
+      dispatch(searchGroup({ searchParam: value }));
     },
     [dispatch]
   );

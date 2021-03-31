@@ -6,6 +6,7 @@ import tagConfigReducer from '../page/tag-config/reducers';
 import deviceReducer from '../page/device/reducers';
 import driverConfigReducer from '../page/driver-configuration/reducers';
 import userReducer from '../page/user-list/reducers';
+import groupReducer from '../page/group/reducers';
 
 let reducer = combineReducers({
   formwork: formworkReducer,
@@ -14,6 +15,7 @@ let reducer = combineReducers({
   device: deviceReducer,
   driverConfig: driverConfigReducer,
   user: userReducer,
+  group: groupReducer,
 });
 
 export default reducer;

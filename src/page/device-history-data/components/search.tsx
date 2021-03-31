@@ -36,7 +36,6 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           'OpcUaProfile',
           'OpcDaProfile',
         ],
-        'storageStyle|1': ['单点数据', '结构数据'],
         state: '在线',
         'remarks|+1': [
           'modbus设备-温度传感器',

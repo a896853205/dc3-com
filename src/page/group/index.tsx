@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 
-const Device = lazy(() => import('./components/compose'));
+const Group = lazy(() => import('./components/compose'));
 
 // 整体组件逻辑,lazy等等.
-export default () => <Device />;
+export default () => <Group />;
