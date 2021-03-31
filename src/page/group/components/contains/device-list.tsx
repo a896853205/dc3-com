@@ -25,6 +25,12 @@ const { data } = Mock.mock({
         'OpcUaProfile',
         'OpcDaProfile',
       ],
+      'location|+1': [
+        '北京数据中心/一楼动环演示机柜',
+        '北京数据中心/二楼动环演示机柜',
+        '北京数据中心/三楼动环演示机柜',
+        '北京数据中心/四楼动环演示机柜',
+      ],
       'status|+1': ['未激活', '在线', '离线', '已禁用'],
       onlineTime: '@date("yyyy-MM-dd HH:mm:ss")',
     },
@@ -63,6 +69,7 @@ export default () => {
       >
         <Column title='设备名称' dataIndex='name' key='name' />
         <Column title='设备所属产品' dataIndex='modal' key='modal' />
+        <Column title='设备所在位置' dataIndex='location' key='loaction' />
         <Column
           title='状态/启用状态'
           dataIndex='status'

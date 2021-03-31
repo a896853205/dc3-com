@@ -15,6 +15,10 @@ const columns = [
     dataIndex: 'modal',
   },
   {
+    title: '设备所在位置',
+    dataIndex: 'location',
+  },
+  {
     title: '状态/启用状态',
     dataIndex: 'status',
     render: (status: any) => {
@@ -60,6 +64,12 @@ const { data } = Mock.mock({
         'MqttProfile',
         'OpcUaProfile',
         'OpcDaProfile',
+      ],
+      'location|+1': [
+        '北京数据中心/一楼动环演示机柜',
+        '北京数据中心/二楼动环演示机柜',
+        '北京数据中心/三楼动环演示机柜',
+        '北京数据中心/四楼动环演示机柜',
       ],
       'status|+1': ['未激活', '在线', '离线', '已禁用'],
       onlineTime: '@date("yyyy-MM-dd HH:mm:ss")',

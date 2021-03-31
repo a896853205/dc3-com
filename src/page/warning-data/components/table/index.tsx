@@ -23,6 +23,10 @@ const columns = [
     dataIndex: 'content',
   },
   {
+    title: '所在位置',
+    dataIndex: 'location',
+  },
+  {
     title: '时间',
     dataIndex: 'startTime',
   },
@@ -52,6 +56,12 @@ const { data } = Mock.mock({
         '温度显示异常',
         '温度过高',
         '温度远超正常值',
+      ],
+      'location|+1': [
+        '北京数据中心/一楼动环演示机柜',
+        '北京数据中心/二楼动环演示机柜',
+        '北京数据中心/三楼动环演示机柜',
+        '北京数据中心/四楼动环演示机柜',
       ],
       startTime: '@date("yyyy-MM-dd HH:mm:ss")',
       state: '是',
