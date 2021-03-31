@@ -36,6 +36,12 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           'OpcUaProfile',
           'OpcDaProfile',
         ],
+        'location|+1': [
+          '北京数据中心/一楼动环演示机柜',
+          '北京数据中心/二楼动环演示机柜',
+          '北京数据中心/三楼动环演示机柜',
+          '北京数据中心/四楼动环演示机柜',
+        ],
         state: '在线',
         'remarks|+1': [
           'modbus设备-温度传感器',
@@ -92,6 +98,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         <Column title='#' dataIndex='index' key='index' />
         <Column title='设备' dataIndex='device' key='devce' />
         <Column title='所属产品' dataIndex='template' key='template' />
+        <Column title='所在位置' dataIndex='location' key='location' />
         <Column title='状态' dataIndex='state' key='state' />
         <Column title='备注' dataIndex='remarks' key='remarks' />
         <Column title='采集时间' dataIndex='updateTime' key='updateTime' />

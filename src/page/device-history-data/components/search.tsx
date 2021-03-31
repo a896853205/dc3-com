@@ -44,6 +44,12 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
           'OpcUa设备-水浸传感器',
           'OpcDa设备-空调传感器',
         ],
+        'location|+1': [
+          '北京数据中心/一楼动环演示机柜',
+          '北京数据中心/二楼动环演示机柜',
+          '北京数据中心/三楼动环演示机柜',
+          '北京数据中心/四楼动环演示机柜',
+        ],
         updateTime: '@date("yyyy-MM-dd HH:mm:ss")',
         createTime: '@date("yyyy-MM-dd HH:mm:ss")',
       },
@@ -93,6 +99,7 @@ export default ({ setUrlState }: { setUrlState: Function }) => {
         <Column title='#' dataIndex='index' key='index' />
         <Column title='设备' dataIndex='device' key='devce' />
         <Column title='所属产品' dataIndex='template' key='template' />
+        <Column title='所在位置' dataIndex='location' key='location' />
         <Column title='存储类型' dataIndex='storageStyle' key='storageStyle' />
         <Column title='状态' dataIndex='state' key='state' />
         <Column title='备注' dataIndex='remarks' key='remarks' />
