@@ -4,6 +4,7 @@ declare namespace Demo {
       count: number;
       user: string;
       password: string;
+      isLoading: boolean;
     };
   }
 }

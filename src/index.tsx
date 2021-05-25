@@ -13,7 +13,9 @@ import App from './app';
 
 const saga = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(saga));
+
 saga.run(loginFlow);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

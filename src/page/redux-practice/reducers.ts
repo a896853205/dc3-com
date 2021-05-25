@@ -8,6 +8,7 @@ const defaultState: Demo.ReduxState = {
     count: 1,
     user: 'sage',
     password: '123',
+    isLoading: false,
   },
 };
 
@@ -29,6 +30,11 @@ export const reducer = handleActions(
     [actionTypes.LOGIN_SUCCESS]: (state, action) => {
       console.log('login success token:', action.payload);
       return state;
+    },
+    [actionTypes.LOADING]: state => {
+      return produce(state, draftState => {
+        draftState.isLoading = !draftState.isLoading;
+      });
     },
   },
   defaultState.demo

@@ -6,9 +6,11 @@ export const actionTypes = {
   LOGOUT: 'LOGOUT',
   LOGIN_ERROR: 'LOGIN_ERROR',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
+  LOADING: 'LOADING',
 };
 
-export const { loginRequest, logout } = createActions({
+export const { loginRequest, logout, loading } = createActions({
   [actionTypes.LOGIN_SUCCESS]: token => ({ token }),
   [actionTypes.LOGOUT]: state => state,
+  [actionTypes.LOADING]: state => state,
 });
