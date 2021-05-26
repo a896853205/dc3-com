@@ -1,4 +1,4 @@
-import { createActions } from 'redux-actions';
+import { createAction } from 'redux-actions';
 export const actionTypes = {
   INCREASE: 'INCREASE',
   DECREASEl: 'DECREASE',
@@ -9,8 +9,11 @@ export const actionTypes = {
   LOADING: 'LOADING',
 };
 
-export const { loginRequest, logout, loading } = createActions({
-  [actionTypes.LOGIN_SUCCESS]: token => ({ token }),
-  [actionTypes.LOGOUT]: state => state,
-  [actionTypes.LOADING]: state => state,
-});
+export const logout = createAction<void>(actionTypes.LOGOUT);
+export const loginRequest = createAction<{ token: string }, string>(
+  actionTypes.LOGIN_REQUEST,
+  (token: string) => ({ token })
+);
+export const loading = createAction<void>(actionTypes.LOADING);
+
+logout();

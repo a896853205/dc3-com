@@ -12,7 +12,10 @@ import { loginFlow } from './page/redux-practice/sagas';
 import App from './app';
 
 const saga = createSagaMiddleware();
-const store = createStore(reducer, applyMiddleware(saga));
+const store = createStore<Demo.ReduxState, any, any, any>(
+  reducer,
+  applyMiddleware(saga)
+);
 
 saga.run(loginFlow);
 

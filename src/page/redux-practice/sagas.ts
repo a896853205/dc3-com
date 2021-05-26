@@ -3,7 +3,14 @@
  */
 import { Action } from 'redux-actions';
 import { Task } from 'redux-saga';
-import { take, call, put, fork, cancel } from 'redux-saga/effects';
+import {
+  take,
+  call,
+  put,
+  fork,
+  cancel,
+  StrictEffect,
+} from 'redux-saga/effects';
 import { loading } from './actions';
 
 import * as API from './api';
@@ -22,16 +29,17 @@ function* authorize() {
   }
 }
 
-export function* loginFlow() {
+export function* loginFlow(): Generator<
+  StrictEffect,
+  void,
+  Task | Action<string> | undefined
+> {
   while (true) {
     yield take('LOGIN_REQUEST');
     console.log('saga: login resuest is sended');
 
-    const task: Task | undefined = yield fork(authorize);
-    const action: Action<string> | undefined = yield take([
-      'LOGOUT',
-      'LOGIN_ERROR',
-    ]);
+    const task = (yield fork(authorize)) as Task;
+    const action = (yield take(['LOGOUT', 'LOGIN_ERROR'])) as Action<string>;
 
     if (action?.type === 'LOGOUT' && task) {
       yield cancel(task);

@@ -1,18 +1,19 @@
-import { handleActions } from 'redux-actions';
+import { Action, handleActions } from 'redux-actions';
 import produce from 'immer';
 
 import { actionTypes } from './actions';
 
+interface TokenPayload {
+  token: string;
+}
 const defaultState: Demo.ReduxState = {
-  demo: {
-    count: 1,
-    user: 'sage',
-    password: '123',
-    isLoading: false,
-  },
+  count: 1,
+  user: 'sage',
+  password: '123',
+  isLoading: false,
 };
 
-export const reducer = handleActions(
+export const reducer = handleActions<Demo.ReduxState, TokenPayload>(
   {
     /*  [actionTypes.INCREASE]: state => {
       return { ...state, count: state.count + 1 };
@@ -23,12 +24,12 @@ export const reducer = handleActions(
       });
       return result;
     }, */
-    [actionTypes.LOGOUT]: (state, action) => {
+    [actionTypes.LOGOUT]: state => {
       console.log('退出登录');
       return state;
     },
-    [actionTypes.LOGIN_SUCCESS]: (state, action) => {
-      console.log('login success token:', action.payload);
+    [actionTypes.LOGIN_SUCCESS]: (state, { payload }: Action<TokenPayload>) => {
+      console.log('login success token:', payload);
       return state;
     },
     [actionTypes.LOADING]: state => {
@@ -37,5 +38,5 @@ export const reducer = handleActions(
       });
     },
   },
-  defaultState.demo
+  defaultState
 );
