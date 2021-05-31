@@ -15,6 +15,7 @@ import WarningData from 'src/page/warning-data';
 import WarningSet from 'src/page/warning-set';
 import UserList from 'src/page/user-list';
 import DevicePage from 'src/page/capsule/index';
+import DevelopmentProgram from 'src/page/development-program';
 
 const config: RouteConfig[] = [
   {
@@ -50,6 +51,10 @@ const config: RouteConfig[] = [
       {
         path: '/home/microService',
         component: MicroService,
+      },
+      {
+        path: '/home/developmentProgram',
+        component: DevelopmentProgram,
       },
       {
         path: '/home/timeline',

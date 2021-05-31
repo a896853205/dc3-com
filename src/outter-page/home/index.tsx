@@ -9,6 +9,7 @@ import {
   HomeOutlined,
   LineChartOutlined,
   UserOutlined,
+  ShareAltOutlined,
 } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 
@@ -62,12 +63,16 @@ const MENU_DATA = [
     ],
     <LineChartOutlined />
   ),
+  new MenuItemGroup(
+    '部署方案管理',
+    [new MenuItem('/home/developmentProgram', '部署方案详情')],
+    <ShareAltOutlined />
+  ),
   new MenuItem('/home/userList', '用户管理', <UserOutlined />),
 ];
 
-export const MenuContext = React.createContext<(MenuItem | MenuItemGroup)[]>(
-  MENU_DATA
-);
+export const MenuContext =
+  React.createContext<(MenuItem | MenuItemGroup)[]>(MENU_DATA);
 
 export default ({ route }: RouteConfigComponentProps) => {
   const history = useHistory();
@@ -81,8 +86,7 @@ export default ({ route }: RouteConfigComponentProps) => {
           style={{
             justifyContent: 'space-between',
             display: 'flex',
-          }}
-        >
+          }}>
           <h1
             style={{
               fontFamily: 'fantasy',
@@ -91,8 +95,7 @@ export default ({ route }: RouteConfigComponentProps) => {
               color: '#fafafa',
               cursor: 'pointer',
             }}
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             动环监控平台
           </h1>
           <UserHeader />

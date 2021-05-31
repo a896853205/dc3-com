@@ -17,7 +17,7 @@ export default () => {
       toolbox: {
         feature: {
           dataZoom: {
-            yAxisIndex: false as false,
+            yAxisIndex: false,
           },
           saveAsImage: {
             pixelRatio: 2,
@@ -25,9 +25,9 @@ export default () => {
         },
       },
       tooltip: {
-        trigger: 'axis' as 'axis',
+        trigger: 'axis',
         axisPointer: {
-          type: 'shadow' as 'shadow',
+          type: 'shadow',
         },
       },
       grid: {
@@ -35,10 +35,10 @@ export default () => {
       },
       dataZoom: [
         {
-          type: 'inside' as 'inside',
+          type: 'inside',
         },
         {
-          type: 'slider' as 'slider',
+          type: 'slider',
         },
       ],
       xAxis: {
